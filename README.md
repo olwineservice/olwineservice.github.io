@@ -19,6 +19,6 @@ https://olwineservice.github.io/
 
 ## Before Store Submission
 
-- Replace the pending support email notice with the official support email.
+- Keep the support email current: `olwine.service@gmail.com`.
 - Review privacy policy text against the final SDK list, account policy, analytics, crash reporting, and sync behavior.
 - Review terms with appropriate legal advice before public store submission.
