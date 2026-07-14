@@ -1,6 +1,6 @@
-# myWineFridge Support Site
+# OL~ WINE Support Site
 
-This repository hosts the GitHub Pages support site for myWineFridge by OL Wine Service.
+This repository hosts the GitHub Pages support site for OL~ WINE by OL Wine Service.
 
 Published URL:
 
