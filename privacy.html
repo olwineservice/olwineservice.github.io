@@ -15,6 +15,7 @@
           <a href="support.html">Support</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
+          <a href="open-source.html">Open Source</a>
         </div>
       </nav>
     </header>
@@ -22,68 +23,76 @@
     <main>
       <p class="eyebrow">Privacy</p>
       <h1>Privacy Policy</h1>
-      <p class="lead">This policy describes how OL~ WINE handles information in the current local-first app.</p>
-
-      <div class="notice">
-        <p>이 문서는 출시 준비용 초안입니다. 수집 SDK, 인증 및 동기화 정책이 확정되면 제출 전에 업데이트해야 합니다.</p>
-      </div>
+      <p class="lead">This policy describes how OL~ WINE handles information in the local-first app.</p>
 
       <section lang="ko">
         <h2>개인정보 처리방침</h2>
-        <p><strong>시행일:</strong> 2026-07-14</p>
+        <p><strong>시행일:</strong> 2026-08-08</p>
 
         <h3>1. 처리하는 정보</h3>
-        <p>현재 버전의 OL~ WINE은 사용자가 직접 입력한 와인 정보, 셀러 정보, 시음 기록, 메모, 사진, 설정 값을 기기 내부에 저장합니다.</p>
+        <p>OL~ WINE은 사용자가 직접 입력한 와인 정보, 셀러 정보, 구매 정보, 구매희망 정보, 시음 기록, 메모, 사진, QR 라벨 정보, 앱 설정, 로딩 이미지, 백업 관련 데이터를 기기 내부에 저장합니다.</p>
 
         <h3>2. 서버 전송</h3>
-        <p>현재 버전은 서버 계정, 서버 동기화, 클라우드 저장 기능을 제공하지 않습니다. 앱 데이터는 사용자가 직접 공유하거나 백업 파일을 내보내지 않는 한 OL Wine Service 서버로 전송되지 않습니다.</p>
+        <p>현재 앱은 자체 회원가입, 자체 로그인, OL Wine Service 서버 동기화, OL Wine Service 클라우드 저장 기능을 제공하지 않습니다. 사용자가 CSV, 백업 파일, 공유 기능, 이메일 문의를 직접 사용하지 않는 한 앱 데이터는 OL Wine Service 서버로 전송되지 않습니다.</p>
 
-        <h3>3. 백업 파일</h3>
-        <p>사용자가 수동 백업을 만들면 백업 파일에는 와인 데이터, 시음 기록, 설정, 선택한 사진 파일이 포함될 수 있습니다. 백업 파일의 보관과 공유는 사용자 책임입니다.</p>
+        <h3>3. 결제와 구매 복원</h3>
+        <p>프리미엄 구매와 구매 복원이 제공되는 경우 결제와 환불은 Apple App Store 또는 Google Play를 통해 처리됩니다. OL Wine Service는 사용자의 Apple Account, Google 계정, 카드 번호, 은행 정보 같은 결제 수단 정보를 직접 수집하거나 저장하지 않습니다. 앱은 유료 기능 제공과 구매 복원에 필요한 구매 상태, 상품 식별자, 거래 또는 영수증 확인 결과만 사용할 수 있습니다.</p>
 
-        <h3>4. 사진과 권한</h3>
-        <p>앱은 와인 사진과 시음 사진을 저장하기 위해 카메라 또는 사진 접근 권한을 요청할 수 있습니다. 촬영 사진을 사진첩에 함께 저장하는 설정을 켠 경우 사진첩 저장 권한이 사용될 수 있습니다.</p>
+        <h3>4. 사진, 카메라, 파일 권한</h3>
+        <p>앱은 와인 사진, 시음 사진, 셀러 사진, 로딩 이미지, QR 스캔, CSV 업로드, 백업·복구, 파일 공유를 위해 카메라, 사진, 파일 접근 권한을 요청할 수 있습니다. 촬영한 사진을 사진첩에 저장하도록 사용자가 설정한 경우 사진첩 저장 권한이 사용될 수 있습니다.</p>
 
-        <h3>5. 분석과 오류 수집</h3>
-        <p>현재 문서 기준으로 공개 출시용 분석 또는 오류 수집 SDK는 확정되지 않았습니다. 해당 기능을 도입하는 경우 수집 항목과 목적을 이 문서에 반영합니다.</p>
+        <h3>5. 백업과 공유</h3>
+        <p>수동 백업 파일에는 와인 데이터, 시음 기록, 설정, 사진, 로딩 이미지가 포함될 수 있습니다. CSV 백업에는 사진 파일이 포함되지 않습니다. 사용자가 만든 백업 파일, CSV 파일, 공유 파일의 보관과 전송은 사용자가 선택한 위치와 공유 대상의 정책을 따릅니다.</p>
 
-        <h3>6. 계정과 동기화</h3>
-        <p>계정 기능 또는 서버 동기화가 추가되는 경우, 계정 정보, 인증 제공자, 서버 저장 항목, 삭제 절차를 이 문서에 추가로 명시합니다.</p>
+        <h3>6. 분석과 오류 수집</h3>
+        <p>현재 공개 정책 기준으로 OL~ WINE은 OL Wine Service가 운영하는 분석 또는 오류 수집 서버로 앱 사용 데이터를 전송하지 않습니다. 향후 분석, 오류 수집, 원격 설정, 외부 동기화 SDK를 도입하는 경우 수집 항목, 목적, 보관 기간을 이 문서에 반영합니다.</p>
 
-        <h3>7. 문의</h3>
+        <h3>7. 보관과 삭제</h3>
+        <p>기기 내부 데이터는 사용자가 앱 안에서 삭제하거나 앱을 삭제할 때까지 기기에 보관됩니다. 백업 파일이나 공유 파일은 사용자가 저장한 위치에서 직접 관리해야 합니다.</p>
+
+        <h3>8. 아동 개인정보</h3>
+        <p>OL~ WINE은 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
+
+        <h3>9. 문의</h3>
         <p>개인정보 관련 문의는 <a class="inline-link" href="mailto:olwine.service@gmail.com">olwine.service@gmail.com</a>으로 보내주세요.</p>
       </section>
 
       <section class="lang-block" lang="en">
         <h2>Privacy Policy</h2>
-        <p><strong>Effective date:</strong> 2026-07-14</p>
+        <p><strong>Effective date:</strong> 2026-08-08</p>
 
         <h3>1. Information handled by the app</h3>
-        <p>The current version of OL~ WINE stores user-entered wine information, cellar information, tasting records, notes, photos, and settings on the device.</p>
+        <p>OL~ WINE stores user-entered wine information, cellar information, purchase information, wishlist information, tasting records, notes, photos, QR label information, app settings, loading images, and backup-related data on the device.</p>
 
         <h3>2. Server transmission</h3>
-        <p>The current version does not provide server accounts, server sync, or cloud storage. App data is not sent to OL Wine Service servers unless the user exports or shares it manually.</p>
+        <p>The current app does not provide OL Wine Service account sign-up, OL Wine Service login, OL Wine Service server sync, or OL Wine Service cloud storage. App data is not sent to OL Wine Service servers unless the user manually uses CSV export, backup files, sharing features, or email support.</p>
 
-        <h3>3. Backup files</h3>
-        <p>Manual backup files may include wine data, tasting records, settings, and selected photo files. Users are responsible for storing and sharing backup files safely.</p>
+        <h3>3. Purchases and restore purchases</h3>
+        <p>If premium purchases and restore purchases are provided, payment and refunds are handled by Apple App Store or Google Play. OL Wine Service does not directly collect or store Apple Account details, Google account details, card numbers, bank information, or other payment method information. The app may use purchase status, product identifiers, transaction data, or receipt verification results only as needed to provide paid features and restore purchases.</p>
 
-        <h3>4. Photos and permissions</h3>
-        <p>The app may request camera or photo access to add wine and tasting photos. Photo library save permission may be used when the user enables saving captured photos to the device photo library.</p>
+        <h3>4. Photos, camera, and file permissions</h3>
+        <p>The app may request camera, photo, and file access for wine photos, tasting photos, cellar photos, loading images, QR scanning, CSV import, backup and restore, and file sharing. Photo library save permission may be used when the user enables saving captured photos to the device photo library.</p>
 
-        <h3>5. Analytics and crash reporting</h3>
-        <p>Analytics and crash reporting SDKs for public release are not finalized as of this draft. If they are added, this policy will be updated with the data collected and purpose.</p>
+        <h3>5. Backups and sharing</h3>
+        <p>Manual backup files may include wine data, tasting records, settings, photos, and loading images. CSV backups do not include photo files. Backup files, CSV files, and shared files are stored and transmitted according to the locations and sharing targets selected by the user.</p>
 
-        <h3>6. Accounts and sync</h3>
-        <p>If account or server sync features are added, this policy will describe account information, authentication providers, server-stored data, and deletion procedures.</p>
+        <h3>6. Analytics and crash reporting</h3>
+        <p>Under the current public policy, OL~ WINE does not send app usage data to analytics or crash reporting servers operated by OL Wine Service. If analytics, crash reporting, remote configuration, or external sync SDKs are introduced later, this policy will be updated with collected data, purposes, and retention periods.</p>
 
-        <h3>7. Contact</h3>
+        <h3>7. Retention and deletion</h3>
+        <p>On-device data remains on the device until the user deletes it in the app or deletes the app. Backup files and shared files must be managed by the user in the locations where they were stored.</p>
+
+        <h3>8. Children</h3>
+        <p>OL~ WINE is not directed to children and does not knowingly collect personal information from children.</p>
+
+        <h3>9. Contact</h3>
         <p>For privacy questions, contact <a class="inline-link" href="mailto:olwine.service@gmail.com">olwine.service@gmail.com</a>.</p>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>© 2026 OL Wine Service. Last updated: 2026-07-14.</p>
+        <p>© 2026 OL Wine Service. Last updated: 2026-08-08.</p>
       </div>
     </footer>
   </body>
