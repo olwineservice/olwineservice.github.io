@@ -6,6 +6,53 @@
     <title>Features | OL~ WINE</title>
     <meta name="description" content="Explore OL~ WINE features for cellar management, tasting records, search, CSV, AI prompts, QR labels, and backup.">
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .feature-item {
+        display: grid;
+        grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2.2fr);
+        column-gap: 32px;
+        align-items: start;
+      }
+
+      .feature-item > h3 {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        margin-top: 0;
+      }
+
+      .feature-item > p {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+      }
+
+      .feature-item > .feature-media {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      @media (max-width: 700px) {
+        .feature-item {
+          grid-template-columns: 1fr;
+          row-gap: 0;
+        }
+
+        .feature-item > h3,
+        .feature-item > p,
+        .feature-item > .feature-media {
+          grid-column: 1;
+          grid-row: auto;
+        }
+      }
+
+      .feature-page section > h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-top: 2.4rem;
+        margin-bottom: 1.2rem;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -48,7 +95,7 @@
           </article>
           <article class="feature-item">
             <h3>시음 기록과 잔량</h3>
-            <p>한 병을 조금씩 마시거나 모두 마신 경우를 기록합니다. 한 병·반 병·잔·ml 단위로 마신 양을 입력해 남은 양을 관리하고, 평점·사진·메모를 여러 시음 기록에 남길 수 있습니다.</p>
+            <p>한 병을 조금씩 마시거나 모두 마신 경우를 기록합니다. 한 병·반 병·잔·ml 단위로 마신 양을 입력해 남은 양을 관리하고, 평점·사진·메모를 여러 시음 기록에 남길 수 있습니다. (코라뱅 지원)</p>
             <div class="feature-media">
               <figure class="feature-shot"><a href="images/features/partial-tasting.png"><img src="images/features/partial-tasting.png" alt="평점 3.8과 시음량 250ml를 입력한 시음기록 수정 화면" width="1170" height="2532" loading="lazy"></a><figcaption>부분 시음 기록</figcaption></figure>
             </div>
@@ -124,7 +171,7 @@
           </article>
           <article class="feature-item">
             <h3>Tastings and remaining wine</h3>
-            <p>Record a small pour or a finished bottle. Enter the amount consumed as a bottle, half bottle, glass, or milliliters, track what remains, and keep ratings, photos, and notes across multiple tastings.</p>
+            <p>Record a small pour or a finished bottle. Enter the amount consumed as a bottle, half bottle, glass, or milliliters, track what remains, and keep ratings, photos, and notes across multiple tastings. (Coravin supported)</p>
             <div class="feature-media">
               <figure class="feature-shot"><a href="images/features/partial-tasting_e.png"><img src="images/features/partial-tasting_e.png" alt="Tasting edit screen with a 3.8 rating and 250 ml consumed" width="1170" height="2532" loading="lazy"></a><figcaption>Partial tasting</figcaption></figure>
             </div>
