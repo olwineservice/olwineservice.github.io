@@ -34,13 +34,13 @@
       <section lang="ko">
         <h2>자주 묻는 질문</h2>
         <h3>데이터는 어디에 저장되나요?</h3>
-        <p>현재 버전은 로컬 우선 앱으로, 와인과 시음 기록은 기기 내부 SQLite 데이터베이스에 저장됩니다.</p>
+        <p>와인과 시음 기록의 원본은 기기 내부 SQLite 데이터베이스에 저장됩니다. 별도로 동의한 경우에만 일부 와인·시음 정보가 서비스 개선을 위한 익명 데이터로 서버에 제공됩니다. 전송 항목은 <a class="inline-link" href="privacy.html">개인정보 처리방침</a>을 참고하세요.</p>
 
         <h3>백업은 어떻게 하나요?</h3>
         <p>앱의 설정에서 수동 백업 파일을 만들고 공유할 수 있습니다. 백업 파일에는 데이터베이스와 선택한 사진 파일이 포함될 수 있습니다.</p>
 
         <h3>복구하면 기존 데이터는 어떻게 되나요?</h3>
-        <p>현재 복구 흐름은 선택한 백업 파일의 내용으로 로컬 데이터와 사진 폴더를 교체하는 방식입니다. 복구 전에는 별도 백업을 권장합니다.</p>
+        <p>복구하면 선택한 백업 파일의 내용으로 로컬 데이터와 사진 폴더가 교체됩니다. 복구 전에는 별도 백업을 권장합니다. 익명 데이터 제공 서버는 백업이나 기기 간 동기화 수단이 아니며, 이 서버에서 개인 데이터를 복구할 수 없습니다.</p>
 
         <h3>CSV 업로드가 실패합니다.</h3>
         <p>CSV 양식의 필수 컬럼, 와인명, 빈티지, 날짜 형식, 숫자 형식을 확인하세요. 앱에서 제공하는 양식을 내려받아 작성하는 것을 권장합니다.</p>
@@ -53,18 +53,21 @@
 
         <h3>앱 자체 계정을 사용하나요?</h3>
         <p>OL~ WINE은 현재 앱 자체 회원가입이나 로그인을 제공하지 않으며, 이름, 이메일, 비밀번호 같은 계정 정보를 수집하지 않습니다. 프리미엄 구매와 구매 복원은 Apple App Store 또는 Google Play 계정 기준으로 처리됩니다.</p>
+
+        <h3>계정이나 앱 데이터를 삭제하려면 어떻게 하나요?</h3>
+        <p>삭제할 앱 계정은 없습니다. 설정에서 와인과 시음 기록을 각각 삭제할 수 있으며, 기기 내 앱 데이터 전체를 제거하려면 운영체제에서 앱을 삭제해야 합니다. 이미 제공한 익명 데이터와 별도 백업 파일의 처리 방법은 <a class="inline-link" href="account-deletion.html">계정·데이터 삭제 안내</a>를 확인하세요.</p>
       </section>
 
       <section class="lang-block" lang="en">
         <h2>FAQ</h2>
         <h3>Where is my data stored?</h3>
-        <p>The current app is local-first. Wine and tasting records are stored in an on-device SQLite database.</p>
+        <p>The source of your wine and tasting records is an on-device SQLite database. Only if you separately opt in are selected wine and tasting fields contributed anonymously to a server for service improvement. See the <a class="inline-link" href="privacy.html">privacy policy</a> for the transmitted fields.</p>
 
         <h3>How do I back up my data?</h3>
         <p>You can create and share a manual backup file from Settings. A backup may include the database and selected photo files.</p>
 
         <h3>What happens during restore?</h3>
-        <p>The current restore flow replaces local app data and photo files with the selected backup contents. Creating a backup before restore is recommended.</p>
+        <p>Restoring replaces local app data and photo files with the selected backup contents. Creating a backup first is recommended. The anonymous contribution server is not a backup or cross-device sync service and cannot restore your personal data.</p>
 
         <h3>Why does CSV upload fail?</h3>
         <p>Check required columns, wine name, vintage, date formats, and numeric fields. Use the template provided in the app whenever possible.</p>
@@ -77,12 +80,15 @@
 
         <h3>Does the app use its own account?</h3>
         <p>OL~ WINE currently does not provide its own sign-up or login and does not collect account information such as names, email addresses, or passwords. Premium purchases and restore purchases are handled through Apple App Store or Google Play accounts.</p>
+
+        <h3>How do I delete an account or app data?</h3>
+        <p>There is no app account to delete. You can delete wines and tasting records separately in Settings, or delete the app through your operating system to remove on-device app data. See <a class="inline-link" href="account-deletion.html">account and data deletion guidance</a> for previously contributed anonymous data and separately stored backups.</p>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>© 2026 OL Wine Service. Last updated: 2026-08-09.</p>
+        <p>© 2026 OL Wine Service. Last updated: 2026-09-17.</p>
       </div>
     </footer>
   </body>
