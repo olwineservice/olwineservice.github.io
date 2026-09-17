@@ -196,6 +196,39 @@ li {
   margin: 0;
 }
 
+.feature-media {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.feature-shot {
+  width: min(190px, calc((100vw - 64px) / 2));
+  margin: 0;
+}
+
+.feature-shot a {
+  display: block;
+  line-height: 0;
+}
+
+.feature-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.feature-shot figcaption {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
 .premium-badge {
   display: inline-block;
   vertical-align: middle;
@@ -252,6 +285,11 @@ ul {
   .feature-item {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+
+  .feature-media {
+    grid-column: 1;
+    margin-top: 8px;
   }
 
   main {
