@@ -1,15 +1,15 @@
 {
   "app": "OL~ WINE",
   "version": "1.0.0+1",
-  "generated_on": "2026-10-06",
+  "generated_on": "2026-10-07",
   "notice_count": 1670,
   "group_count": 187,
   "package_count": 248,
   "packages": [
-    "Debian iso-codes",
     "Feather Icons",
     "Lucide Icons",
     "Unicode CLDR",
+    "Wikidata",
     "_fe_analyzer_shared",
     "aFileChooser",
     "abseil-cpp",
@@ -255,5 +255,5 @@
     "yapf_diff",
     "zlib"
   ],
-  "sha256": "f24f947b3d35f814138379f2ff85196096cf04a63b65b2e31749958c12d14986"
+  "sha256": "16ce0e8ec47ba94eef44eedd13354adf38923a900af6cc623c24344fe335c107"
 }
