@@ -38,13 +38,13 @@
 
         <h2>자주 묻는 질문</h2>
         <h3>데이터는 어디에 저장되나요?</h3>
-        <p>와인과 시음 기록의 원본은 기기 내부 SQLite 데이터베이스에 저장됩니다. 사용자가 별도로 동의하면 일부 와인·시음 정보가 비식별 형태로 서버에 제공됩니다. AI 라벨 인식을 직접 실행하면 처리된 라벨 사진, AI 결과, 익명 인증 사용자 ID와 크레딧 요청 기록이 별도 서버 경로에서 처리됩니다. 자세한 항목은 <a class="inline-link" href="privacy.html">개인정보 처리방침</a>을 참고하세요.</p>
+        <p>와인과 시음 기록은 기본적으로 사용자의 기기에 저장됩니다. 사용자가 별도로 동의하면 일부 와인·시음 정보가 개인을 직접 알아볼 수 없는 형태로 서비스 개선을 위해 전송됩니다. AI 라벨 인식을 직접 실행하면 처리된 라벨 사진, AI 결과, 익명 사용자 식별 정보와 크레딧 사용 기록이 별도로 서버에서 처리됩니다. 자세한 항목은 <a class="inline-link" href="privacy.html">개인정보 처리방침</a>을 참고하세요.</p>
 
         <h3>백업은 어떻게 하나요?</h3>
-        <p>앱의 설정에서 수동 백업 파일을 만들고 공유할 수 있습니다. 백업 파일에는 데이터베이스와 선택한 사진 파일이 포함될 수 있습니다.</p>
+        <p>앱의 설정에서 수동 백업 파일을 만들고 공유할 수 있습니다. 백업 파일에는 앱에 저장된 정보와 사용자가 선택한 사진 파일이 포함될 수 있습니다.</p>
 
         <h3>복구하면 기존 데이터는 어떻게 되나요?</h3>
-        <p>복구하면 선택한 백업 파일의 내용으로 로컬 데이터와 사진 폴더가 교체됩니다. 복구 전에는 별도 백업을 권장합니다. 익명 데이터 제공 서버는 백업이나 기기 간 동기화 수단이 아니며, 이 서버에서 개인 데이터를 복구할 수 없습니다.</p>
+        <p>복구하면 기기에 저장된 앱 정보와 사진이 선택한 백업 파일의 내용으로 교체됩니다. 복구 전에는 별도 백업을 권장합니다. 익명 데이터 제공 기능은 백업이나 기기 간 동기화 수단이 아니며, 이 기능을 통해 개인 기록을 복구할 수 없습니다.</p>
 
         <h3>CSV 업로드가 실패합니다.</h3>
         <p>CSV 양식의 필수 컬럼, 와인명, 빈티지, 날짜 형식, 숫자 형식을 확인하세요. 앱에서 제공하는 양식을 내려받아 작성하는 것을 권장합니다.</p>
@@ -56,10 +56,10 @@
         <p>유료 기능이 제공되는 경우 결제와 구매 복원은 Apple App Store 또는 Google Play 계정 기준으로 처리됩니다. 구매 복원은 유료 권한만 복원하며, 와인 데이터는 수동 백업·복구로 이전해야 합니다.</p>
 
         <h3>앱 자체 계정을 사용하나요?</h3>
-        <p>OL~ WINE은 사용자용 회원가입이나 이름·이메일·비밀번호 로그인을 제공하지 않습니다. 다만 AI 라벨 인식을 처음 사용할 때 Supabase 익명 인증 사용자 ID가 생성되고, 같은 익명 사용자의 AI 요청과 크레딧 사용을 관리하는 서버 지갑에 연결됩니다. 프리미엄 구매와 구매 복원은 Apple App Store 또는 Google Play 계정 기준으로 처리됩니다.</p>
+        <p>OL~ WINE은 사용자용 회원가입이나 이름·이메일·비밀번호 로그인을 제공하지 않습니다. 다만 AI 라벨 인식을 처음 사용할 때 익명 사용자 식별 정보가 생성되며, 같은 사용자의 AI 요청과 크레딧 사용 기록을 관리하는 데 사용됩니다. 프리미엄 구매와 구매 복원은 Apple App Store 또는 Google Play 계정 기준으로 처리됩니다.</p>
 
         <h3>계정이나 앱 데이터를 삭제하려면 어떻게 하나요?</h3>
-        <p>설정에서 와인과 시음 기록을 각각 삭제할 수 있으며, 기기 내 앱 데이터 전체를 제거하려면 운영체제에서 앱을 삭제해야 합니다. 앱 삭제만으로 익명 데이터 제공 서버의 기존 행이나 AI 서버의 익명 사용자, 사진, 결과와 지갑 기록이 자동 삭제되지는 않습니다. 자세한 내용은 <a class="inline-link" href="account-deletion.html">계정·데이터 삭제 안내</a>를 확인하세요.</p>
+        <p>설정에서 와인과 시음 기록을 각각 삭제할 수 있으며, 기기에 저장된 앱 정보 전체를 제거하려면 운영체제에서 앱을 삭제해야 합니다. 앱 삭제만으로 이미 제공한 익명 정보나 AI 서버에 보관된 익명 사용자 정보, 사진, 결과와 크레딧 기록이 자동 삭제되지는 않습니다. 자세한 내용은 <a class="inline-link" href="account-deletion.html">계정·데이터 삭제 안내</a>를 확인하세요.</p>
       </section>
 
       <section class="lang-block" lang="en">
@@ -68,13 +68,13 @@
 
         <h2>FAQ</h2>
         <h3>Where is my data stored?</h3>
-        <p>The source of your wine and tasting records is an on-device SQLite database. If you separately opt in, selected wine and tasting fields are contributed to a server in de-identified form. When you run AI label recognition, the processed label photo, AI results, anonymous authentication user ID, and credit request records are handled through a separate server path. See the <a class="inline-link" href="privacy.html">privacy policy</a> for details.</p>
+        <p>Your wine and tasting records are stored on your device by default. If you separately opt in, selected wine and tasting information is sent for service improvement in a form that does not directly identify you. When you run AI label recognition, the processed label photo, AI results, anonymous user identifier, and credit usage records are handled separately on a server. See the <a class="inline-link" href="privacy.html">privacy policy</a> for details.</p>
 
         <h3>How do I back up my data?</h3>
-        <p>You can create and share a manual backup file from Settings. A backup may include the database and selected photo files.</p>
+        <p>You can create and share a manual backup file from Settings. A backup may include information stored by the app and photo files you select.</p>
 
         <h3>What happens during restore?</h3>
-        <p>Restoring replaces local app data and photo files with the selected backup contents. Creating a backup first is recommended. The anonymous contribution server is not a backup or cross-device sync service and cannot restore your personal data.</p>
+        <p>Restoring replaces app information and photos stored on the device with the selected backup contents. Creating a backup first is recommended. Anonymous data contribution is not a backup or cross-device sync service and cannot restore your personal records.</p>
 
         <h3>Why does CSV upload fail?</h3>
         <p>Check required columns, wine name, vintage, date formats, and numeric fields. Use the template provided in the app whenever possible.</p>
@@ -86,16 +86,16 @@
         <p>If paid features are provided, payment and restore purchases are handled through Apple App Store or Google Play accounts. Restoring purchases restores paid entitlements only; wine data must be transferred with manual backup and restore.</p>
 
         <h3>Does the app use its own account?</h3>
-        <p>OL~ WINE does not provide user-facing sign-up or name, email, and password login. When AI label recognition is first used, however, a Supabase anonymous authentication user ID is created and linked to a server wallet that manages the same anonymous user's AI requests and credit usage. Premium purchases and restore purchases are handled through Apple App Store or Google Play accounts.</p>
+        <p>OL~ WINE does not provide user-facing sign-up or name, email, and password login. When AI label recognition is first used, however, an anonymous user identifier is created and used to manage the same user's AI requests and credit usage records. Premium purchases and restore purchases are handled through Apple App Store or Google Play accounts.</p>
 
         <h3>How do I delete an account or app data?</h3>
-        <p>You can delete wines and tasting records separately in Settings, or delete the app through your operating system to remove on-device app data. Deleting the app does not automatically delete prior anonymous contribution rows or the AI server's anonymous user, photos, results, and wallet records. See <a class="inline-link" href="account-deletion.html">account and data deletion guidance</a> for details.</p>
+        <p>You can delete wines and tasting records separately in Settings, or delete the app through your operating system to remove all app information stored on the device. Deleting the app does not automatically delete information previously contributed anonymously or the anonymous user information, photos, results, and credit records stored by the AI service. See <a class="inline-link" href="account-deletion.html">account and data deletion guidance</a> for details.</p>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>© 2026 OL Wine Service. Last updated: 2026-10-17.</p>
+        <p>© 2026 OL Wine Service. Last updated: 2026-10-18.</p>
       </div>
     </footer>
   </body>
