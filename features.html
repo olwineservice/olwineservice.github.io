@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Features | OL~ WINE</title>
-    <meta name="description" content="Explore OL~ WINE features for cellar management, tasting records, search, CSV, AI prompts, QR labels, and backup.">
+    <meta name="description" content="OL~ WINE의 와인·셀러 관리, 시음 기록, 셀러 정리, 검색, 현황, AI 입력과 추천, 배지, QR, 백업 기능을 살펴보세요.">
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -46,6 +46,18 @@
         }
       }
 
+      .feature-page .feature-media {
+        grid-template-columns: repeat(2, minmax(0, 240px));
+        gap: 16px;
+      }
+
+      .feature-page .feature-item > p,
+      .feature-page .feature-media { order: 0; }
+      .language-links { display: flex; gap: 20px; }
+      .language-links a { color: var(--accent); }
+      .feature-note { margin-top: 24px; font-size: 0.95rem; }
+      .feature-page section { scroll-margin-top: 20px; }
+
       .feature-page section > h2 {
         font-size: 2rem;
         line-height: 1.25;
@@ -71,165 +83,207 @@
 
     <main class="feature-page">
       <p class="eyebrow">Features</p>
-      <h1>OL~ WINE Features</h1>
-      <p class="lead">Keep track of where each bottle is, how much remains, and what you thought when you tasted it. Premium-only features are marked below.</p>
-
-      <section lang="ko">
-        <h2>무료 기능</h2>
-        <p>프리미엄 표시가 없는 기능은 무료로 사용할 수 있습니다. 무료 이용 범위는 셀러 1개와 현재 보관 중인 와인 20병까지입니다.</p>
+      <h1>OL~ WINE 주요 기능</h1>
+      <p class="lead">내 와인이 어디에 있는지, 얼마나 남았는지, 어떤 순간에 맛있었는지.<br>보관부터 시음까지, 나의 와인 기록을 차곡차곡 남겨보세요.</p>
+      <p class="language-links"><a href="#ko">한국어</a><a href="#en">English</a></p>
+      <section id="ko" lang="ko">
+        <h2>주요 기능</h2>
+        <p>와인을 들이고, 보관하고, 마신 뒤의 기억을 남기는 일까지. 내 와인 생활에 필요한 기능을 살펴보세요.</p>
         <div class="feature-list">
-          <article class="feature-item">
-            <h3>와인과 셀러 정리</h3>
-            <p>와인을 셀러·층·위치 또는 위치 미지정 상태로 관리합니다. 선반형과 적재형 층을 구성하고, 같은 와인 여러 병도 각각의 위치에 보관할 수 있습니다.</p>
+          <article class="feature-item" id="collection-ko">
+            <h3>내 와인과 셀러 관리</h3>
+            <p>어느 셀러에 어떤 와인이 있는지, 같은 와인이 몇 병 남았는지 한눈에 살펴보세요. 셀러의 층과 자리를 실제 보관 모습에 맞게 구성하고, 같은 와인도 한 병씩 구분해 관리할 수 있습니다. 셀러에 넣지 않은 와인은 위치 미지정으로 보관하시면 됩니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/cellar-overview.png"><img src="images/features/cellar-overview.png" alt="홈 화면의 셀러별 보관 병 수와 여유 공간" width="1170" height="2532" loading="lazy"></a><figcaption>셀러 개요</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-home-ko.png"><img src="images/features/olwine-home-ko.png" alt="셀러별 보관 현황" width="1206" height="2622" loading="lazy"></a><figcaption>셀러별 보관 현황</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/cellar-layout.png"><img src="images/features/cellar-layout.png" alt="층과 자리별 와인 배치" width="1170" height="2532" loading="lazy"></a><figcaption>층과 자리별 와인 배치</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>셀러 상세 보기와 위치 이동</h3>
-            <p>층별 화면에서 채운 자리, 빈 자리, 미사용 자리를 구분합니다. 와인 종류에 따른 아이콘으로 배치를 살피고, 자리를 선택하면 목록의 해당 와인을 강조합니다. 선반형 층에서는 와인을 끌어 빈 자리로 옮기거나 두 자리의 와인을 맞바꿀 수 있습니다.</p>
+          <article class="feature-item" id="tastings-ko">
+            <h3>한 잔부터 한 병까지, 시음 기록</h3>
+            <p>조금씩 나누어 마신 와인도 마신 양과 남은 양을 기록할 수 있습니다. 평점과 사진, 메모뿐 아니라 바디·탄닌·당도·산미와 향미도 남겨보세요. 한 병에 여러 번의 시음 기록을 쌓을 수 있고, 사진 목록에서는 라벨과 그날의 기억을 함께 되짚어볼 수 있습니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/cellar-layout.png"><img src="images/features/cellar-layout.png" alt="종류별 와인 아이콘과 미사용 자리 A2가 표시된 셀러 상세 화면" width="1170" height="2532" loading="lazy"></a><figcaption>층별 자리 배치</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/cellar-move-before.png"><img src="images/features/cellar-move-before.png" alt="셀러 자리 A4의 와인을 빈 자리로 드래그하는 중인 화면" width="1170" height="2532" loading="lazy"></a><figcaption>드래그로 위치 이동</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-tasting-photos-ko.png"><img src="images/features/olwine-tasting-photos-ko.png" alt="사진으로 돌아보는 시음 기록" width="1206" height="2622" loading="lazy"></a><figcaption>사진으로 돌아보는 시음 기록</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/partial-tasting.png"><img src="images/features/partial-tasting.png" alt="마신 양과 평점 기록" width="1170" height="2532" loading="lazy"></a><figcaption>마신 양과 평점 기록</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>시음 기록과 잔량</h3>
-            <p>한 병을 조금씩 마시거나 모두 마신 경우를 기록합니다. 한 병·반 병·잔·ml 단위로 마신 양을 입력해 남은 양을 관리하고, 평점·사진·메모를 여러 시음 기록에 남길 수 있습니다. (코라뱅 지원)</p>
+          <article class="feature-item" id="organization-ko">
+            <h3>셀러 정리를 차근차근</h3>
+            <p>셀러를 정리할 때는 종류·국가·시음 적기를 기준으로 배치를 계획하거나, 원하는 정리 기준을 직접 정할 수 있습니다. 배치 미리보기를 확인한 뒤 한 병씩 옮기거나 모두 꺼내 다시 넣는 방식으로 진행해 보세요. 몇 병만 옮길 때는 간단 정리에서 이동·자리 교환·미지정 처리를 할 수 있습니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/partial-tasting.png"><img src="images/features/partial-tasting.png" alt="평점 3.8과 시음량 250ml를 입력한 시음기록 수정 화면" width="1170" height="2532" loading="lazy"></a><figcaption>부분 시음 기록</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-organization-ko.png"><img src="images/features/olwine-organization-ko.png" alt="내 셀러에 맞는 정리 기준" width="1206" height="2622" loading="lazy"></a><figcaption>내 셀러에 맞는 정리 기준</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-position-ko.png"><img src="images/features/olwine-position-ko.png" alt="몇 병만 옮기는 간단 정리" width="1206" height="2622" loading="lazy"></a><figcaption>몇 병만 옮기는 간단 정리</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>검색과 시음 이력</h3>
-            <p>셀러 전체 또는 특정 셀러의 와인을 찾고, 종류·생산 국가·잔량·시음 상태 등으로 결과를 좁힙니다. 개별 병과 같은 와인별 보기를 전환하고 시음 이력도 확인할 수 있습니다.</p>
+          <article class="feature-item" id="search-ko">
+            <h3>필요한 와인을 빠르게 찾기</h3>
+            <p>와인명으로 찾거나 셀러·종류·국가·빈티지·시음 적기 등의 조건으로 목록을 좁혀보세요. 보고 싶은 열과 정렬 순서도 바꿀 수 있습니다. 개별 병과 같은 와인별 보기를 오가며 보관량을 살피고, 같은 와인의 구매·시음 이력도 함께 확인할 수 있습니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/wine-search.png"><img src="images/features/wine-search.png" alt="검색 결과의 빈티지, 용량, 가격, 목표 시음 시기 열" width="1170" height="2532" loading="lazy"></a><figcaption>검색 결과</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/wine-search-filters.png"><img src="images/features/wine-search-filters.png" alt="셀러, 와인 종류, 국가, 빈티지 품질, 시음 시기를 고르는 검색 필터" width="1170" height="2532" loading="lazy"></a><figcaption>검색 필터</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/wine-search.png"><img src="images/features/wine-search.png" alt="원하는 열로 보는 와인 목록" width="1170" height="2532" loading="lazy"></a><figcaption>원하는 열로 보는 와인 목록</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/wine-search-filters.png"><img src="images/features/wine-search-filters.png" alt="세부 조건으로 찾기" width="1170" height="2532" loading="lazy"></a><figcaption>세부 조건으로 찾기</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>구매희망 와인</h3>
-            <p>구매하고 싶은 와인을 보유 와인과 별도로 정리합니다. 수량과 후보 구매처를 기록하고, 구매완료 시 해당 정보를 보유 와인 등록에 이어 사용할 수 있습니다.</p>
+          <article class="feature-item" id="statistics-ko">
+            <h3>보유·시음·구매 현황 한눈에</h3>
+            <p>지금 보관 중인 와인부터 그동안의 시음과 구매까지, 쌓인 기록을 현황 화면에서 살펴보세요. 종류·국가·빈티지 등의 분포를 보고, 관심 있는 항목을 눌러 해당 와인 목록으로 이어서 확인할 수 있습니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/wishlist.png"><img src="images/features/wishlist.png" alt="구매희망 와인 세 항목의 빈티지, 병 크기, 수량, 단가가 표시된 목록" width="1170" height="2532" loading="lazy"></a><figcaption>구매희망 목록</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-statistics-ko.png"><img src="images/features/olwine-statistics-ko.png" alt="보유 와인 요약과 종류별 분포" width="1206" height="2622" loading="lazy"></a><figcaption>보유 와인 요약과 종류별 분포</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>원하는 AI에 질문하기</h3>
-            <p>와인 정보 조회용 질문이나 선택한 여러 와인에 관한 추천·페어링 질문의 초안을 복사합니다. 이 질문 복사 기능은 AI 답변을 직접 생성하지 않으며, 평소 사용하는 AI에 붙여넣어 활용할 수 있습니다.</p>
+          <article class="feature-item" id="label-ko">
+            <h3>라벨 사진으로 입력 도움받기</h3>
+            <p>라벨을 촬영하거나 사진을 선택하면 인식할 영역을 조정한 뒤 AI로 와인 정보 입력을 도울 수 있습니다. 제안된 내용은 저장 전에 확인하고 고쳐주세요. 직접 정보를 찾고 입력하고 싶을 때는 평소 사용하는 AI에 보낼 질문을 복사하고, 받은 답변을 가져와 활용하실 수도 있습니다.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/ai-copy-single.png"><img src="images/features/ai-copy-single.png" alt="와인 수정 화면의 와인명, 빈티지, AI 질문 복사 아이콘" width="1170" height="2532" loading="lazy"></a><figcaption>와인 정보 질문</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/ai-copy-selection.png"><img src="images/features/ai-copy-selection.png" alt="셀러에서 와인 세 개를 선택하고 AI 질문 복사 아이콘이 표시된 화면" width="1170" height="2532" loading="lazy"></a><figcaption>선택한 와인으로 질문</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-label-ai-ko.png"><img src="images/features/olwine-label-ai-ko.png" alt="라벨 인식과 와인 정보 편집" width="1206" height="2622" loading="lazy"></a><figcaption>라벨 인식과 와인 정보 편집</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>CSV 가져오기와 내보내기</h3>
-            <p>와인과 시음 기록을 CSV 양식으로 한꺼번에 가져오거나 내보냅니다. CSV에는 사진 파일이 포함되지 않습니다.</p>
+          <article class="feature-item" id="taste-ko">
+            <h3>내 기록에서 알아보는 와인 취향</h3>
+            <p>최근 1년, 최근 3년 또는 전체 시음 기록을 바탕으로 내가 어떤 와인을 높게 평가했는지 돌아볼 수 있습니다. 기록을 집계한 자료에 AI의 해석을 더하고, 마음에 드는 분석을 저장해 다음 와인 추천에 참고할 수 있습니다. 기록이 적거나 정보가 부족한 부분도 함께 살펴봐 주세요.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-taste-analysis-ko.png"><img src="images/features/olwine-taste-analysis-ko.png" alt="분석 기간 선택과 외부 AI 활용" width="1206" height="2622" loading="lazy"></a><figcaption>분석 기간 선택과 외부 AI 활용</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="recommendations-ko">
+            <h3>오늘 마실 와인 고르기</h3>
+            <p>보유 와인 중에서 후보를 고른 뒤 음식이나 상황에 맞는 추천을 받아보세요. 먼저 마실 와인, 비교 시음할 조합, 마시는 순서도 함께 고민할 수 있습니다. 저장한 취향 분석을 참고하거나 외부 AI용 질문을 복사해 활용할 수 있으며, 추천은 와인을 고르는 데 참고할 의견으로 봐주시면 좋겠습니다.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-recommendation-ko.png"><img src="images/features/olwine-recommendation-ko.png" alt="상황에 맞는 추천 목적 선택" width="1206" height="2622" loading="lazy"></a><figcaption>상황에 맞는 추천 목적 선택</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="wishlist-ko">
+            <h3>다음에 만나고 싶은 와인</h3>
+            <p>언젠가 마셔보고 싶은 와인은 구매희망 목록에 따로 모아두세요. 필요한 수량과 후보 구매처, 메모를 남길 수 있습니다. 실제로 구매하셨다면 적어둔 정보를 보유 와인 등록으로 이어서 사용하실 수 있습니다.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/wishlist.png"><img src="images/features/wishlist.png" alt="구매희망 와인 목록" width="1170" height="2532" loading="lazy"></a><figcaption>구매희망 와인 목록</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="qr-ko">
+            <h3>QR로 바로 찾는 내 와인</h3>
+            <p>와인·층·셀러별 QR 라벨을 만들어 이미지로 저장하거나 인쇄할 수 있습니다. 라벨을 스캔하면 연결된 와인과 보관 정보를 바로 확인할 수 있어, 병이 여러 겹으로 쌓인 셀러에서도 필요한 와인을 찾는 데 도움이 됩니다.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/qr-label.png"><img src="images/features/qr-label.png" alt="라벨 구성과 출력 설정" width="1170" height="2532" loading="lazy"></a><figcaption>라벨 구성과 출력 설정</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/qr-scan-result.png"><img src="images/features/qr-scan-result.png" alt="스캔으로 확인하는 와인과 위치" width="1170" height="2532" loading="lazy"></a><figcaption>스캔으로 확인하는 와인과 위치</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="badges-ko">
+            <h3>기록이 쌓이는 즐거움, 나의 배지</h3>
+            <p>와인을 보관하고 시음을 기록하는 동안 나만의 배지도 하나씩 모입니다. 달성한 배지와 다음 목표를 살펴보고, 뜻밖에 발견하는 배지도 만나보세요. 마음에 드는 배지는 이미지로 만들어 공유할 수 있습니다.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-badges-ko.png"><img src="images/features/olwine-badges-ko.png" alt="달성한 배지와 다음 목표" width="1206" height="2622" loading="lazy"></a><figcaption>달성한 배지와 다음 목표</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="backup-ko">
+            <h3>소중한 기록을 내 파일로</h3>
+            <p>와인과 시음 기록을 CSV 파일로 내보내 스프레드시트에서 살펴보거나, 앱의 CSV 양식에 맞춘 파일을 가져올 수 있습니다. 사진까지 보관하고 싶을 때는 OL~ WINE 백업 파일을 이용해 주세요. 백업 파일은 직접 안전한 곳에 보관하셔야 하며, 복구하면 현재 기록이 파일 내용으로 교체됩니다. 기기 간 자동 동기화는 제공하지 않습니다.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-backup-ko.png"><img src="images/features/olwine-backup-ko.png" alt="사진을 함께 보관하는 백업·복구" width="1206" height="2622" loading="lazy"></a><figcaption>사진을 함께 보관하는 백업·복구</figcaption></figure>
+            </div>
           </article>
         </div>
-
-        <h2>프리미엄 기능</h2>
-        <div class="feature-list">
-          <article class="feature-item">
-            <h3>보관 규모 확장 <span class="premium-badge">프리미엄</span></h3>
-            <p>무료 이용 범위인 셀러 1개와 보관 와인 20병의 수량 제한을 해제해 여러 셀러와 더 많은 병을 관리합니다.</p>
-          </article>
-          <article class="feature-item">
-            <h3>QR 라벨과 스캔 <span class="premium-badge">프리미엄</span></h3>
-            <p>와인·층·셀러의 QR 라벨을 만들고 인쇄할 수 있습니다. 라벨을 스캔해 관련 와인과 보관 정보로 빠르게 이동합니다. 특히 적층형 셀러의 와인들에 QR을 출력하여 붙여두면, 꺼내지 않고 관리할 수 있습니다.</p>
-            <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/qr-label.png"><img src="images/features/qr-label.png" alt="QR 생성 범위, 표시 항목, 크기, 공유와 인쇄 옵션" width="1170" height="2532" loading="lazy"></a><figcaption>QR 생성</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/qr-scan-result.png"><img src="images/features/qr-scan-result.png" alt="QR 스캔 후 와인 정보와 보관 위치를 확인하는 화면" width="1170" height="2532" loading="lazy"></a><figcaption>QR 스캔 결과</figcaption></figure>
-            </div>
-          </article>
-          <article class="feature-item">
-            <h3>수동 백업과 복구 <span class="premium-badge">프리미엄</span></h3>
-            <p>앱 데이터를 파일로 백업하고 필요할 때 복구합니다. 사진 포함 여부를 선택할 수 있으며, 백업 파일은 사용자가 직접 보관합니다. 서버 자동 백업이나 기기 간 동기화는 현재는 제공하지 않습니다.</p>
-          </article>
-        </div>
+        <p class="feature-note">앱 내 AI 기능의 이용 가능 여부와 제공량은 앱의 안내를 확인해 주세요. AI가 제안한 정보와 분석은 정확하지 않을 수 있으므로 직접 확인해 활용하시기 바랍니다.</p>
       </section>
 
-      <section class="lang-block" lang="en">
-        <h2>Included Features</h2>
-        <p>Features without a Premium badge are available for free. The free tier supports one cellar and up to 20 currently stored bottles.</p>
+      <section id="en" lang="en" class="lang-block">
+        <h2>Features</h2>
+        <p>From bringing a bottle home to remembering the last glass, explore the features that help you look after your wines.</p>
         <div class="feature-list">
-          <article class="feature-item">
-            <h3>Wines and cellars</h3>
-            <p>Organize bottles by cellar, layer, and position, or leave their location unassigned. Configure shelf or stacked layers and give each bottle its own location, even when several bottles are the same wine.</p>
+          <article class="feature-item" id="collection-en">
+            <h3>Your wines, each in its place</h3>
+            <p>See what is in each cellar and how many bottles remain. Arrange layers and positions to match your storage, and keep track of each bottle, even when you own several of the same wine. Bottles outside a cellar can stay unassigned.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/cellar-overview_e.png"><img src="images/features/cellar-overview_e.png" alt="Home screen showing bottle counts and available space by cellar" width="1170" height="2532" loading="lazy"></a><figcaption>Cellar overview</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-home-ko.png"><img src="images/features/olwine-home-ko.png" alt="Collection overview (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Collection overview (Korean UI)</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/cellar-layout_e.png"><img src="images/features/cellar-layout_e.png" alt="Wines by layer and position" width="1170" height="2532" loading="lazy"></a><figcaption>Wines by layer and position</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>Cellar view and position changes</h3>
-            <p>See occupied, empty, and unavailable positions by layer. Wine-type icons make the layout easier to scan, and selecting a position highlights its wine in the list. In shelf layers, drag a bottle to an empty position or swap two occupied positions.</p>
+          <article class="feature-item" id="tastings-en">
+            <h3>A tasting journal, from a glass to a bottle</h3>
+            <p>Record a small pour or a finished bottle and keep track of what remains. Save ratings, photos, notes, and impressions of body, tannin, sweetness, acidity, and aromas. Keep several tastings for one bottle, or browse the photo list to revisit the wine and the occasion.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/cellar-layout_e.png"><img src="images/features/cellar-layout_e.png" alt="Cellar layout with wine-type icons and unavailable position A2" width="1170" height="2532" loading="lazy"></a><figcaption>Positions by layer</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/cellar-move-before_e.png"><img src="images/features/cellar-move-before_e.png" alt="Dragging a bottle from position A4 toward an empty cellar position" width="1170" height="2532" loading="lazy"></a><figcaption>Moving a bottle</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-tasting-photos-ko.png"><img src="images/features/olwine-tasting-photos-ko.png" alt="Tasting records with photos (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Tasting records with photos (Korean UI)</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/partial-tasting_e.png"><img src="images/features/partial-tasting_e.png" alt="Amounts and tasting ratings" width="1170" height="2532" loading="lazy"></a><figcaption>Amounts and tasting ratings</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>Tastings and remaining wine</h3>
-            <p>Record a small pour or a finished bottle. Enter the amount consumed as a bottle, half bottle, glass, or milliliters, track what remains, and keep ratings, photos, and notes across multiple tastings. (Coravin supported)</p>
+          <article class="feature-item" id="organization-en">
+            <h3>A helping hand when reorganizing</h3>
+            <p>Plan a new layout by wine type, country, or drinking window, or choose your own priorities. Review the proposed layout, then follow the steps one bottle at a time or take bottles out and refill. For smaller changes, move or swap bottles, or mark their location as unassigned.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/partial-tasting_e.png"><img src="images/features/partial-tasting_e.png" alt="Tasting edit screen with a 3.8 rating and 250 ml consumed" width="1170" height="2532" loading="lazy"></a><figcaption>Partial tasting</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-organization-ko.png"><img src="images/features/olwine-organization-ko.png" alt="Choose how to organize (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Choose how to organize (Korean UI)</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-position-ko.png"><img src="images/features/olwine-position-ko.png" alt="Quick position changes (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Quick position changes (Korean UI)</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>Search and tasting history</h3>
-            <p>Find wines across all cellars or within one cellar, then narrow results by type, production country, remaining amount, and tasting status. Switch between individual bottles and grouped wines, and revisit tasting history.</p>
+          <article class="feature-item" id="search-en">
+            <h3>Find the bottle you have in mind</h3>
+            <p>Search by name or narrow the list by cellar, type, country, vintage, drinking window, and more. Choose the columns and sort order that suit you. Switch between individual bottles and grouped wines, and review purchases and tastings of the same wine.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/wine-search_e.png"><img src="images/features/wine-search_e.png" alt="Search results showing vintage, size, price, and target tasting year columns" width="1170" height="2532" loading="lazy"></a><figcaption>Search results</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/wine-search-filters_e.png"><img src="images/features/wine-search-filters_e.png" alt="Search filters for cellar, wine type, country, vintage quality, and drinking window" width="1170" height="2532" loading="lazy"></a><figcaption>Search filters</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/wine-search_e.png"><img src="images/features/wine-search_e.png" alt="A wine list with your chosen columns" width="1170" height="2532" loading="lazy"></a><figcaption>A wine list with your chosen columns</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/wine-search-filters_e.png"><img src="images/features/wine-search-filters_e.png" alt="Narrow your search" width="1170" height="2532" loading="lazy"></a><figcaption>Narrow your search</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>Wishlist wines</h3>
-            <p>Keep wines you want to buy separate from your collection. Record quantities and possible shops, then carry their details into stored-wine registration when a purchase is complete.</p>
+          <article class="feature-item" id="statistics-en">
+            <h3>See how your collection is taking shape</h3>
+            <p>Explore your current collection, past tastings, and purchases in one place. See distributions by type, country, vintage, and other details, then open an item to look at the wines behind it.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/wishlist_e.png"><img src="images/features/wishlist_e.png" alt="Wishlist with three entries showing vintages, bottle sizes, quantities, and prices" width="1170" height="2532" loading="lazy"></a><figcaption>Wishlist</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-statistics-ko.png"><img src="images/features/olwine-statistics-ko.png" alt="Collection summary and wine types (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Collection summary and wine types (Korean UI)</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>Ask the AI you choose</h3>
-            <p>Copy a draft question for wine information or for recommendations and pairings based on selected wines. This prompt-copy feature does not generate an AI answer; paste the prompt into the AI you already use.</p>
+          <article class="feature-item" id="label-en">
+            <h3>Get a little help from a label photo</h3>
+            <p>Take or choose a label photo, adjust the area to recognize, and use AI to help fill in wine details. Please review and correct the suggestions before saving. You can also copy a wine-information prompt for the AI you normally use and bring its answer back into the app.</p>
             <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/ai-copy-single_e.png"><img src="images/features/ai-copy-single_e.png" alt="Wine edit screen with name, vintage, and AI prompt copy icon" width="1170" height="2532" loading="lazy"></a><figcaption>Wine information prompt</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/ai-copy-selection_e.png"><img src="images/features/ai-copy-selection_e.png" alt="Three wines selected in the cellar with the AI prompt copy icon" width="1170" height="2532" loading="lazy"></a><figcaption>Selected-wine prompt</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/olwine-label-ai-ko.png"><img src="images/features/olwine-label-ai-ko.png" alt="Label recognition and editable wine details (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Label recognition and editable wine details (Korean UI)</figcaption></figure>
             </div>
           </article>
-          <article class="feature-item">
-            <h3>CSV import and export</h3>
-            <p>Import or export wine and tasting records in batches using CSV templates. CSV files do not include photo files.</p>
+          <article class="feature-item" id="taste-en">
+            <h3>Discover patterns in your tasting notes</h3>
+            <p>Look back over the past year, three years, or your full tasting history to explore the wines you rated highly. AI helps interpret a summary of your records, and you can save an analysis to inform later recommendations. Consider the gaps too, especially where records are limited.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-taste-analysis-ko.png"><img src="images/features/olwine-taste-analysis-ko.png" alt="Analysis periods and external AI options (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Analysis periods and external AI options (Korean UI)</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="recommendations-en">
+            <h3>Choose what to open next</h3>
+            <p>Select candidates from your collection and ask for suggestions to suit a meal or occasion. Explore which wine to drink first, bottles to compare, or a serving order. Use a saved taste analysis or copy a prompt for an external AI, and treat the suggestions as another perspective when making your choice.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-recommendation-ko.png"><img src="images/features/olwine-recommendation-ko.png" alt="Choose a recommendation purpose (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Choose a recommendation purpose (Korean UI)</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="wishlist-en">
+            <h3>Keep a list for your next purchase</h3>
+            <p>Keep wines you would like to try in a separate wishlist, with quantities, possible shops, and notes. When you buy one, carry those details into your collection without starting again.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/wishlist_e.png"><img src="images/features/wishlist_e.png" alt="Your wine wishlist" width="1170" height="2532" loading="lazy"></a><figcaption>Your wine wishlist</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="qr-en">
+            <h3>Go straight to a wine with QR</h3>
+            <p>Create QR labels for wines, layers, or cellars, then save them as images or print them. Scan a label to open the linked wine and storage details, which is especially helpful when bottles are stacked out of sight.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/qr-label_e.png"><img src="images/features/qr-label_e.png" alt="Label layout and output options" width="1170" height="2532" loading="lazy"></a><figcaption>Label layout and output options</figcaption></figure>
+              <figure class="feature-shot"><a href="images/features/qr-scan-result_e.png"><img src="images/features/qr-scan-result_e.png" alt="Wine and location after scanning" width="1170" height="2532" loading="lazy"></a><figcaption>Wine and location after scanning</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="badges-en">
+            <h3>Small milestones along the way</h3>
+            <p>Collect badges as you care for your wines and record your tastings. Browse achievements, follow your progress toward the next milestone, and discover a few surprises. You can turn a favorite badge into an image to share.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-badges-ko.png"><img src="images/features/olwine-badges-ko.png" alt="Earned badges and upcoming milestones (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Earned badges and upcoming milestones (Korean UI)</figcaption></figure>
+            </div>
+          </article>
+          <article class="feature-item" id="backup-en">
+            <h3>Keep your records in your own files</h3>
+            <p>Export wine and tasting records as CSV to use in a spreadsheet, or restore a file that follows the app's CSV format. Use an OL~ WINE backup to include photos as well. Keep your backup somewhere safe: restoring replaces the current records with the file contents. Automatic syncing between devices is not available.</p>
+            <div class="feature-media">
+              <figure class="feature-shot"><a href="images/features/olwine-backup-ko.png"><img src="images/features/olwine-backup-ko.png" alt="Backup and restore with photos (Korean UI)" width="1206" height="2622" loading="lazy"></a><figcaption>Backup and restore with photos (Korean UI)</figcaption></figure>
+            </div>
           </article>
         </div>
-
-        <h2>Premium Features</h2>
-        <div class="feature-list">
-          <article class="feature-item">
-            <h3>More room for your collection <span class="premium-badge">Premium</span></h3>
-            <p>Remove the free tier's limit of one cellar and 20 currently stored bottles to manage more cellars and wines.</p>
-          </article>
-          <article class="feature-item">
-            <h3>QR labels and scanning <span class="premium-badge">Premium</span></h3>
-            <p>Create and print QR labels for wines, layers, and cellars. Scan a label to quickly open the related wine or storage information. This is especially useful for stacked cellars: attach printed QR labels to bottles so you can manage them without taking them out.</p>
-            <div class="feature-media">
-              <figure class="feature-shot"><a href="images/features/qr-label_e.png"><img src="images/features/qr-label_e.png" alt="QR generation screen with scope, label fields, size, sharing, and printing options" width="1170" height="2532" loading="lazy"></a><figcaption>QR generation</figcaption></figure>
-              <figure class="feature-shot"><a href="images/features/qr-scan-result_e.png"><img src="images/features/qr-scan-result_e.png" alt="QR scan result showing wine details and storage position" width="1170" height="2532" loading="lazy"></a><figcaption>QR scan result</figcaption></figure>
-            </div>
-          </article>
-          <article class="feature-item">
-            <h3>Manual backup and restore <span class="premium-badge">Premium</span></h3>
-            <p>Back up app data to a file and restore it when needed. Choose whether to include photos and store the backup file yourself. Automatic server backup and cross-device sync are not currently provided.</p>
-          </article>
-        </div>
+        <p class="feature-note">Please check the app for the availability and allowance of in-app AI features. AI suggestions and analyses may be inaccurate, so review them before use.</p>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>© 2026 OL Wine Service. Last updated: 2026-09-17.</p>
+        <p>© 2026 OL Wine Service. Last updated: 2026-10-19.</p>
       </div>
     </footer>
   </body>

@@ -12,7 +12,7 @@ https://olwineservice.github.io/
 
 - `index.html`: landing page
 - `about.html`: product introduction
-- `features.html`: free and Premium feature overview
+- `features.html`: bilingual overview of major app features
 - `support.html`: user support and FAQ
 - `privacy.html`: privacy policy, including optional anonymous data contribution
 - `terms.html`: terms of use
@@ -21,7 +21,7 @@ https://olwineservice.github.io/
 - `licenses/<app-version>/NOTICES.txt`: versioned full-text notices
 - `licenses/<app-version>/manifest.json`: app version, publication date, counts, and notice checksum
 - `404.html`: not found page
-- `FEATURE_SCREENSHOT_BRIEF.md`: requested real-app captures for the feature page
+- `FEATURE_SCREENSHOT_BRIEF.md`: feature order, capture inventory, and release checks
 
 ## Updating Open Source Notices
 
