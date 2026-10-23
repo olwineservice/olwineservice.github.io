@@ -1,0 +1,9 @@
+#account-delete-form { border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:20px; }
+#account-delete-form .account-actions { display:flex; flex-wrap:wrap; gap:12px; margin:16px 0; }
+#account-delete-form button { font:inherit; padding:10px 16px; min-height:44px; border:1px solid var(--accent); border-radius:10px; background:white; color:var(--accent); cursor:pointer; }
+#account-delete-form button[type=submit] { background:var(--accent); color:white; }
+#account-delete-form button:disabled { cursor:default; background:#eee9e3; border-color:#a69a90; color:#655a51; }
+#account-delete-form .account-confirm { display:flex; align-items:flex-start; gap:12px; margin:20px 0; }
+#account-delete-form input { flex:0 0 auto; width:22px; height:22px; margin-top:4px; accent-color:var(--accent); }
+#account-delete-status { font-weight:650; overflow-wrap:anywhere; }
+#account-delete-policy { overflow-wrap:anywhere; }
