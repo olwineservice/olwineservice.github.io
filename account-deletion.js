@@ -76,11 +76,13 @@
           {credential:{provider:pending.provider,refresh_token:session.provider_refresh_token}}:{})});
       if(!['ok','deletion_pending'].includes(state.state)) throw Error('invalid_session');
       const value = await request('/functions/v1/account-lifecycle/v1/deletion-policy',{});
-      if(value.revision!=='member_deletion_v2_forfeit' || typeof value.policy_id!=='string' || !value.policy_id ||
-        !Number.isInteger(value.recovery_months) || value.recovery_months<0 || value.recovery_months>60 ||
-        !Number.isInteger(value.transaction_months) || value.transaction_months<0 || value.transaction_months>120) throw Error('invalid_policy');
+      if(value.revision!=='member_deletion_v3_minimal' ||
+        value.policy_id!=='member_minimal_retention_2026_10_23' ||
+        value.recovery_months!==0 || value.transaction_months!==12 ||
+        value.detail_days!==30 || value.backup_days!==30 ||
+        value.deletion_target_days!==7) throw Error('invalid_policy');
       policy = value;confirm.checked=false;
-      policyText.textContent=`현재 정책: 구매 권리 연결·중복 지급 방지 식별값 최대 ${value.recovery_months}개월, 거래·지급/사용 증빙 최대 ${value.transaction_months}개월 분리 보관. / Current policy: separate retention of purchase-ownership/deduplication identifiers for up to ${value.recovery_months} months and transaction/credit evidence for up to ${value.transaction_months} months. Recovery retention is separate from statutory obligations.`;
+      policyText.textContent=`탈퇴 시 모든 잔액·로그인 복구 식별값·회원 최초 지급 이력을 삭제합니다. 재가입은 새 지갑이며 스토어에서 확인한 구매 권리만 복원합니다. 상세 AI 장부는 탈퇴 후 ${value.detail_days}일 이내, 최소 거래 기록은 권리·미완료 처리 종료 후 ${value.transaction_months}개월(충전권은 탈퇴·최종 처리 중 늦은 시점부터) 보관합니다. 백업은 생성일부터 최대 ${value.backup_days}일, 정상 삭제 목표는 ${value.deletion_target_days}일 이내입니다. / Deletion forfeits every credit and removes login-recovery identifiers and member initial-grant history. Rejoining starts a new wallet; only store-verified purchase rights can return. Detailed AI records are deleted within ${value.detail_days} days. Minimal transactions remain for ${value.transaction_months} months after rights/unfinished processing end (top-ups: from the later of deletion or final processing). Backups expire within ${value.backup_days} days of creation; normal deletion targets ${value.deletion_target_days} days.`;
       message(state.state==='deletion_pending'?'기존 삭제 요청이 처리 중입니다. 재인증 정보를 갱신했습니다. / Your deletion request is pending; reauthorization was updated.':'로그인 확인 완료. 아래 내용을 확인한 뒤 삭제를 요청하세요. / Signed in. Review and confirm before requesting deletion.');
     } catch {
       token=null;policy=null;message('로그인 또는 정책 확인에 실패했습니다. 다시 로그인하거나 이메일로 문의해 주세요. / Sign-in or policy check failed. Retry sign-in or contact support.');

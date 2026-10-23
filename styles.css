@@ -167,6 +167,37 @@ li {
   margin: 24px 0;
 }
 
+.policy-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.policy-table {
+  width: 100%;
+  min-width: 590px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.policy-table caption {
+  text-align: left;
+  font-weight: 650;
+  padding-bottom: 12px;
+}
+
+.policy-table th,
+.policy-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.policy-table thead {
+  background: var(--surface);
+}
+
 .feature-page h1 {
   font-size: 2.5rem;
   line-height: 1.15;

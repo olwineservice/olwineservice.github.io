@@ -10,7 +10,9 @@ class Element {
   async dispatch(name){await this.events[name]?.({preventDefault(){}});}
 }
 const config={enabled:true,url:'https://testproject.supabase.co',publicKey:'sb_publishable_synthetic_public_key'};
-function setup({enabled=true,callback=false,wrongFlow=false,failedDelete=false,policyBad=false}={}){
+const currentPolicy={revision:'member_deletion_v3_minimal',policy_id:'member_minimal_retention_2026_10_23',
+  recovery_months:0,transaction_months:12,detail_days:30,backup_days:30,deletion_target_days:7};
+function setup({enabled=true,callback=false,wrongFlow=false,failedDelete=false,policyBad=false,policyOverride={}}={}){
   const ids=['account-delete-form','account-delete-status','account-delete-policy','account-delete-confirm','account-delete-submit'];
   const nodes=Object.fromEntries(ids.map(id=>[id,new Element()]));
   const google=new Element({provider:'google'}),apple=new Element({provider:'apple'});
@@ -26,7 +28,7 @@ function setup({enabled=true,callback=false,wrongFlow=false,failedDelete=false,p
       calls.push({url,options});const path=new URL(url).pathname;
       if(path==='/auth/v1/token')return Response.json({access_token:'a.b.c',refresh_token:'auth-refresh-private',provider_refresh_token:'provider-refresh-private'});
       if(path.endsWith('/session'))return Response.json({state:'ok'});
-      if(path.endsWith('/deletion-policy'))return Response.json({revision:'member_deletion_v2_forfeit',policy_id:'synthetic-policy',recovery_months:policyBad?-1:12,transaction_months:60});
+      if(path.endsWith('/deletion-policy'))return Response.json({...currentPolicy,...(policyBad?{recovery_months:-1}:{}),...policyOverride});
       if(path.endsWith('/delete'))return failedDelete?new Response('private failure',{status:503}):Response.json({state:'accepted'});
       if(path.endsWith('/logout'))return new Response(null,{status:204});
       throw Error('Unexpected endpoint');
@@ -61,13 +63,14 @@ test('correct callback loads actual policy; unchecked form cannot delete; accept
   const s=setup({callback:true});await settled(s);
   assert.equal(s.memory.size,0);assert.equal(s.nodes['account-delete-submit'].disabled,true);
   await s.nodes['account-delete-form'].dispatch('submit');assert.equal(s.calls.length,3);
-  assert.match(s.nodes['account-delete-policy'].textContent,/12.*60/);
+  assert.match(s.nodes['account-delete-policy'].textContent,/30.*12.*30.*7/);
+  assert.match(s.nodes['account-delete-policy'].textContent,/new wallet/);
   s.nodes['account-delete-confirm'].checked=true;await s.nodes['account-delete-confirm'].dispatch('change');
   assert.equal(s.nodes['account-delete-submit'].disabled,false);
   await s.nodes['account-delete-form'].dispatch('submit');
   assert.equal(s.nodes['account-delete-submit'].disabled,true);assert.equal(s.nodes['account-delete-confirm'].checked,false);
   const deletion=s.calls.find(c=>c.url.endsWith('/delete'));
-  assert.deepEqual(JSON.parse(deletion.options.body),{confirmation:'member_deletion_v2_forfeit',policy_id:'synthetic-policy'});
+  assert.deepEqual(JSON.parse(deletion.options.body),{confirmation:currentPolicy.revision,policy_id:currentPolicy.policy_id});
   assert.equal(deletion.options.headers.Authorization,'Bearer a.b.c');assert.equal(deletion.options.credentials,'omit');
   assert.match(s.nodes['account-delete-status'].textContent,/processing/);
   assert.equal([...s.memory.values()].some(v=>v.includes('refresh')),false);
@@ -80,4 +83,28 @@ test('invalid policy or failed deletion never reports completion or reuses confi
   await s.nodes['account-delete-form'].dispatch('submit');
   assert.equal(s.nodes['account-delete-confirm'].checked,false);assert.equal(s.nodes['account-delete-submit'].disabled,true);
   assert.equal(s.nodes['account-delete-status'].textContent.includes('private failure'),false);
+});
+
+for(const policyOverride of [
+  {revision:'member_deletion_v2_forfeit'}, {policy_id:'unknown'},
+  {recovery_months:12}, {transaction_months:60}, {detail_days:31},
+  {backup_days:31}, {deletion_target_days:8}, {detail_days:undefined},
+]){
+  test(`reject mismatched policy ${JSON.stringify(policyOverride)}`,async()=>{
+    const s=setup({callback:true,policyOverride});await settled(s);
+    assert.equal(s.nodes['account-delete-confirm'].disabled,true);
+    assert.equal(s.nodes['account-delete-submit'].disabled,true);
+    assert.equal(s.nodes['account-delete-policy'].textContent,'');
+    s.nodes['account-delete-confirm'].checked=true;
+    await s.nodes['account-delete-form'].dispatch('submit');
+    assert.equal(s.calls.some(c=>c.url.endsWith('/delete')),false);
+  });
+}
+
+test('disabled callback never exchanges credentials or requests deletion',async()=>{
+  const s=setup({enabled:false,callback:true});
+  await new Promise(resolve=>setTimeout(resolve,10));
+  assert.equal(s.calls.length,0);
+  assert.equal(s.nodes['account-delete-submit'].disabled,true);
+  assert.equal(s.memory.size,0);
 });
