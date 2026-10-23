@@ -26,7 +26,7 @@ function setup({enabled=true,callback=false,wrongFlow=false,failedDelete=false,p
       calls.push({url,options});const path=new URL(url).pathname;
       if(path==='/auth/v1/token')return Response.json({access_token:'a.b.c',refresh_token:'auth-refresh-private',provider_refresh_token:'provider-refresh-private'});
       if(path.endsWith('/session'))return Response.json({state:'ok'});
-      if(path.endsWith('/deletion-policy'))return Response.json({revision:'member_deletion_v1',policy_id:'synthetic-policy',recovery_months:policyBad?-1:12,transaction_months:60});
+      if(path.endsWith('/deletion-policy'))return Response.json({revision:'member_deletion_v2_forfeit',policy_id:'synthetic-policy',recovery_months:policyBad?-1:12,transaction_months:60});
       if(path.endsWith('/delete'))return failedDelete?new Response('private failure',{status:503}):Response.json({state:'accepted'});
       if(path.endsWith('/logout'))return new Response(null,{status:204});
       throw Error('Unexpected endpoint');
@@ -67,7 +67,7 @@ test('correct callback loads actual policy; unchecked form cannot delete; accept
   await s.nodes['account-delete-form'].dispatch('submit');
   assert.equal(s.nodes['account-delete-submit'].disabled,true);assert.equal(s.nodes['account-delete-confirm'].checked,false);
   const deletion=s.calls.find(c=>c.url.endsWith('/delete'));
-  assert.deepEqual(JSON.parse(deletion.options.body),{confirmation:'member_deletion_v1',policy_id:'synthetic-policy'});
+  assert.deepEqual(JSON.parse(deletion.options.body),{confirmation:'member_deletion_v2_forfeit',policy_id:'synthetic-policy'});
   assert.equal(deletion.options.headers.Authorization,'Bearer a.b.c');assert.equal(deletion.options.credentials,'omit');
   assert.match(s.nodes['account-delete-status'].textContent,/processing/);
   assert.equal([...s.memory.values()].some(v=>v.includes('refresh')),false);

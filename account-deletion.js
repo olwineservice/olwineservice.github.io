@@ -76,11 +76,11 @@
           {credential:{provider:pending.provider,refresh_token:session.provider_refresh_token}}:{})});
       if(!['ok','deletion_pending'].includes(state.state)) throw Error('invalid_session');
       const value = await request('/functions/v1/account-lifecycle/v1/deletion-policy',{});
-      if(value.revision!=='member_deletion_v1' || typeof value.policy_id!=='string' || !value.policy_id ||
+      if(value.revision!=='member_deletion_v2_forfeit' || typeof value.policy_id!=='string' || !value.policy_id ||
         !Number.isInteger(value.recovery_months) || value.recovery_months<0 || value.recovery_months>60 ||
         !Number.isInteger(value.transaction_months) || value.transaction_months<0 || value.transaction_months>120) throw Error('invalid_policy');
       policy = value;confirm.checked=false;
-      policyText.textContent=`현재 정책: 복구용 식별값 최대 ${value.recovery_months}개월, 거래·지급/사용 증빙 최대 ${value.transaction_months}개월 분리 보관. / Current policy: separate retention of recovery identifiers for up to ${value.recovery_months} months and transaction/credit evidence for up to ${value.transaction_months} months. Recovery retention is separate from statutory obligations.`;
+      policyText.textContent=`현재 정책: 구매 권리 연결·중복 지급 방지 식별값 최대 ${value.recovery_months}개월, 거래·지급/사용 증빙 최대 ${value.transaction_months}개월 분리 보관. / Current policy: separate retention of purchase-ownership/deduplication identifiers for up to ${value.recovery_months} months and transaction/credit evidence for up to ${value.transaction_months} months. Recovery retention is separate from statutory obligations.`;
       message(state.state==='deletion_pending'?'기존 삭제 요청이 처리 중입니다. 재인증 정보를 갱신했습니다. / Your deletion request is pending; reauthorization was updated.':'로그인 확인 완료. 아래 내용을 확인한 뒤 삭제를 요청하세요. / Signed in. Review and confirm before requesting deletion.');
     } catch {
       token=null;policy=null;message('로그인 또는 정책 확인에 실패했습니다. 다시 로그인하거나 이메일로 문의해 주세요. / Sign-in or policy check failed. Retry sign-in or contact support.');
