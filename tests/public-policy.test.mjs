@@ -18,7 +18,8 @@ test('plan tables contain the confirmed Korean prices and initial allowances in 
   assert.ok(html.includes('KRW 1,900 for 200 credits'));
   assert.ok(html.includes('첫해 총 510크레딧'));
   assert.ok(html.includes('510 in the first year'));
-  assert.ok(html.includes('Google/Apple 로그인, 새 상품 구매와 온라인 계정 삭제는 아직 준비 중'));
+  assert.ok(html.includes('새 상품 판매는 준비 중'));
+  assert.ok(html.includes('외부 계정 삭제 페이지'));
 });
 
 test('published policy removes identity-based rejoin recovery and preserves separate logout semantics', () => {
@@ -41,12 +42,24 @@ test('privacy describes separate fixed operational periods without a universal l
   }
 });
 
-test('online deletion stays disabled and has a script-independent email path', () => {
-  assert.match(read('account-deletion-config.js'), /enabled:\s*false/);
+test('online deletion uses production while HTML fails closed and retains an email path', () => {
+  const config = read('account-deletion-config.js');
+  assert.match(config, /enabled:\s*true/);
+  assert.ok(config.includes('https://owfrxjapqbwhinfnkysk.supabase.co'));
+  assert.match(config, /publicKey:\s*'sb_publishable_[^']+'/);
   const html = read('account-deletion.html');
   assert.match(html, /data-provider="google" disabled/);
   assert.match(html, /data-provider="apple" disabled/);
   assert.ok(html.includes('mailto:olwine.service@gmail.com'));
-  assert.ok(html.includes('온라인 삭제 준비 중'));
-  assert.ok(html.includes('Online deletion is in preparation'));
+  assert.ok(html.includes('온라인 계정 삭제'));
+  assert.ok(html.includes('Delete your account online'));
+  assert.ok(!html.includes('Online requests are being prepared'));
+});
+
+test('both privacy languages disclose OAuth profile fields and current member flow', () => {
+  const html = read('privacy.html');
+  assert.ok(html.includes('공급자 식별자·이름·이메일'));
+  assert.ok(html.includes('provider identifiers, names, email addresses'));
+  assert.ok(!html.includes('server-side anonymous authentication'));
+  assert.ok(html.includes('does not automatically create a member account'));
 });

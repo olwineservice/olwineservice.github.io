@@ -1,7 +1,7 @@
 // Public browser configuration only. Never put service-role/OAuth/encryption keys here.
-// Keep disabled until the reviewed policy, OAuth redirect, backend and worker are ready.
+// Production OAuth callback, member lifecycle policy and worker are configured.
 window.OLWINE_ACCOUNT_CONFIG = Object.freeze({
-  enabled: false,
-  url: '',
-  publicKey: '',
+  enabled: true,
+  url: 'https://owfrxjapqbwhinfnkysk.supabase.co',
+  publicKey: 'sb_publishable_aRXmfAEWUk4G4lNvp6tb5w_iH4UUpnc',
 });
