@@ -4,18 +4,19 @@ import { readFileSync } from 'node:fs';
 
 const read = name => readFileSync(new URL(`../${name}`, import.meta.url), 'utf8');
 
-test('plan tables contain the confirmed Korean prices and initial allowances in both languages', () => {
+test('support omits regional prices while preserving initial allowances in both languages', () => {
   const html = read('support.html');
-  for (const amount of ['1,900', '10,900', '24,900', '2,900', '14,900', '34,900', '4,900', '54,900', '7,900', '74,900']) {
-    assert.ok(html.includes(`${amount}원`), amount);
-    assert.ok(html.includes(`KRW ${amount}`), amount);
-  }
+  assert.doesNotMatch(html, /(?:KRW|USD|EUR|[₩$€£])\s*[\d,]+|[\d,]+\s*원/);
+  assert.ok(!html.includes('Korean prices'));
+  assert.ok(html.includes('가격과 통화는 국가·지역'));
+  assert.ok(html.includes('Prices and currencies vary by country'));
   for (const credits of ['50', '150', '500', '1,000']) {
     assert.ok(html.includes(`${credits}크레딧`));
     assert.ok(html.includes(`${credits} credits`));
   }
   assert.ok(html.includes('매월 30크레딧'));
-  assert.ok(html.includes('KRW 1,900 for 200 credits'));
+  assert.ok(html.includes('구매마다 200크레딧'));
+  assert.ok(html.includes('Each top-up provides 200 credits'));
   assert.ok(html.includes('첫해 총 510크레딧'));
   assert.ok(html.includes('510 in the first year'));
   assert.ok(html.includes('새 상품 판매는 준비 중'));

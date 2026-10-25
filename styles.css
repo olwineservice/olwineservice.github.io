@@ -186,6 +186,10 @@ li {
   padding-bottom: 12px;
 }
 
+.policy-table--allowances {
+  min-width: 0;
+}
+
 .policy-table th,
 .policy-table td {
   border-bottom: 1px solid var(--line);
