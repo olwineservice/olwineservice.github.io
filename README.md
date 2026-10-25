@@ -23,7 +23,17 @@ https://olwineservice.github.io/
 - `404.html`: not found page
 - `FEATURE_SCREENSHOT_BRIEF.md`: feature order, capture inventory, and release checks
 
-## Member policy publication and disabled deletion flow (2026-10-23)
+## Production disclosures and web deletion (2026-10-25)
+
+The Korean and English privacy, terms, support and deletion pages now describe optional free sign-in, provider identifiers/names/email/profile metadata, and the active web deletion path. New product sales remain in preparation; publishing these pages does not activate app sales or submit a store review.
+
+`account-deletion-config.js` contains only the production URL and publishable key, with `enabled: true`. The backend and public site use the exact callback `https://olwineservice.github.io/account-deletion.html?flow=*`; the existing app callback is retained. The form uses one-use PKCE, no persistent Auth/provider tokens, explicit confirmation and the fixed v3 retention policy. HTML controls start disabled and JavaScript enables only a valid public configuration. Email assistance remains available without JavaScript or an installed app. An accepted request is shown as processing, not falsely as completed; the protected server worker completes provider revocation and Auth deletion.
+
+Run `node --test tests/public-policy.test.mjs tests/account-deletion.test.mjs` (19 tests). Live Google/Apple ownership and deletion checks, store declaration saves and remaining Android/release gates are recorded in the app repository's release documentation. App Store “Contact Info” refers to OAuth name/email, not a device address book. Provider accounts must match: signing in with another Apple account creates a separate member and does not authorize deleting a different member.
+
+The following section is the prior disabled rollout record; it does not describe the current public configuration.
+
+## Prior policy publication and disabled flow (2026-10-23)
 
 The support/terms/privacy/deletion pages publish the confirmed basic-plan, 200-credit top-up, optional-free-sign-in and withdrawal policy with an explicit preparation notice. Publication does not activate account features or sales. `account-deletion-config.js` remains disabled; no backend/OAuth settings were changed for this publication. Email support remains available without scripts or an installed app. Member deletion, local wine/photo deletion, contribution deletion and store cancellation are separate. No member identifier is added to label archives or contributions.
 
