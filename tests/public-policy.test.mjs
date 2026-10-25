@@ -4,6 +4,15 @@ import { readFileSync } from 'node:fs';
 
 const read = name => readFileSync(new URL(`../${name}`, import.meta.url), 'utf8');
 
+test('support provides prominent bilingual deletion links before the FAQ sections', () => {
+  const html = read('support.html');
+  const intro = html.slice(html.indexOf('<main>'), html.indexOf('<section lang="ko">'));
+  assert.match(intro, /<nav class="actions" aria-label="계정 관리 \/ Account management">/);
+  assert.match(intro, /<a class="button" href="account-deletion\.html" lang="ko">회원 탈퇴 · 계정 삭제<\/a>/);
+  assert.match(intro, /<a class="button secondary" href="account-deletion\.html" lang="en">Delete your account<\/a>/);
+  assert.ok(read('account-deletion.html').includes('온라인 계정 삭제'));
+});
+
 test('support omits regional prices while preserving initial allowances in both languages', () => {
   const html = read('support.html');
   assert.doesNotMatch(html, /(?:KRW|USD|EUR|[₩$€£])\s*[\d,]+|[\d,]+\s*원/);
