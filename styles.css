@@ -99,6 +99,27 @@ h2 {
   margin: 44px 0 12px;
 }
 
+.app-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.app-title-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+}
+
+.app-title-brand img {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  object-fit: contain;
+}
+
 h3 {
   font-size: 1.1rem;
   margin: 24px 0 8px;
