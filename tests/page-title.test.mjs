@@ -9,5 +9,5 @@ test('about and features titles include the shared app icon before the app name'
   }
   assert.ok(existsSync(new URL('../images/app-icon.png', import.meta.url)));
   const css = readFileSync(new URL('../styles.css', import.meta.url), 'utf8');
-  assert.match(css, /\.app-title-brand img\s*\{[^}]*width: 1em;[^}]*height: 1em;/);
+  assert.match(css, /\.app-title-brand img\s*\{[^}]*width: 1\.25em;[^}]*height: 1\.25em;[^}]*border-radius: 22%;/);
 });
