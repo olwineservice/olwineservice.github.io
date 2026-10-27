@@ -73,3 +73,24 @@ test('both privacy languages disclose OAuth profile fields and current member fl
   assert.ok(!html.includes('server-side anonymous authentication'));
   assert.ok(html.includes('does not automatically create a member account'));
 });
+
+test('planned free trial is explicit and pseudonymous retention is disclosed in both languages', () => {
+  for (const file of ['privacy.html', 'terms.html', 'support.html', 'account-deletion.html']) {
+    const html = read(file);
+    assert.ok(html.includes('무료 AI 체험'), file);
+    assert.ok(html.includes('준비 중'), file);
+    assert.ok(html.includes('being prepared'), file);
+    assert.ok(html.includes('12개월'), file);
+    assert.ok(html.includes('12 months'), file);
+    assert.ok(html.includes('수령 확인값'), file);
+    assert.ok(html.includes('pseudonymous, not anonymous'), file);
+    assert.ok(html.includes('Last updated: 2026-10-27'), file);
+  }
+  const support = read('support.html');
+  assert.ok(support.includes('체험 신청 5크레딧'));
+  assert.ok(support.includes('Trial request · 5 credits'));
+  assert.ok(support.includes('자동 지급하지 않습니다'));
+  assert.ok(support.includes('separate request'));
+  const deletion = read('account-deletion.html');
+  assert.ok(deletion.indexOf('id="account-delete-trial-notice"') < deletion.indexOf('id="account-delete-confirm"'));
+});

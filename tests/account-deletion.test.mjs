@@ -108,3 +108,28 @@ test('disabled callback never exchanges credentials or requests deletion',async(
   assert.equal(s.nodes['account-delete-submit'].disabled,true);
   assert.equal(s.memory.size,0);
 });
+
+const trial = {
+  policy_id:'ai_trial_5_12months_2026_10_26', confirmation:'ai_trial_v1_12months',credits:5,
+  identity_scope:'verified_provider_account',retention:'12_months',
+};
+test('known trial exception is shown before deletion without granting a trial',async()=>{
+  const s=setup({callback:true,policyOverride:{ai_trial:trial}});await settled(s);
+  assert.match(s.nodes['account-delete-policy'].textContent,/무료 체험.*12개월/);
+  assert.match(s.nodes['account-delete-policy'].textContent,/keyed redemption receipt.*12 months/);
+  assert.equal(s.nodes['account-delete-confirm'].disabled,false);
+  assert.equal(s.calls.some(c=>c.url.includes('ai-trial')),false);
+  s.nodes['account-delete-confirm'].checked=true;await s.nodes['account-delete-confirm'].dispatch('change');
+  await s.nodes['account-delete-form'].dispatch('submit');
+  const deletion=s.calls.find(c=>c.url.endsWith('/delete'));
+  assert.deepEqual(JSON.parse(deletion.options.body),{confirmation:currentPolicy.revision,policy_id:currentPolicy.policy_id});
+});
+for(const value of [null,[],{...trial,credits:10},{...trial,retention:'forever'},
+  {...trial,policy_id:'unknown'},{...trial,identity_scope:'device'}]){
+  test('unsupported trial retention policy keeps deletion disabled '+JSON.stringify(value),async()=>{
+    const s=setup({callback:true,policyOverride:{ai_trial:value}});await settled(s);
+    assert.equal(s.nodes['account-delete-submit'].disabled,true);
+    assert.equal(s.nodes['account-delete-policy'].textContent,'');
+    assert.equal(s.calls.some(c=>c.url.endsWith('/delete')),false);
+  });
+}

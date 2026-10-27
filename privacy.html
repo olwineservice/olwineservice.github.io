@@ -22,7 +22,7 @@
       <p class="lead">Information on your device, optional contributions, AI processing, and credit management are handled separately.</p>
       <section lang="ko">
         <h2>개인정보 처리방침</h2>
-        <p><strong>갱신일:</strong> 2026-10-25</p>
+        <p><strong>갱신일:</strong> 2026-10-27</p>
         <p class="notice"><strong>회원·계정 삭제 안내:</strong> 무료 사용의 가입은 선택입니다. 회원 기능을 지원하는 앱에서 Google/Apple로 로그인할 수 있고, 앱 또는 <a class="inline-link" href="account-deletion.html">외부 계정 삭제 페이지</a>에서 같은 계정으로 인증한 뒤 탈퇴를 요청할 수 있습니다. 새 상품 판매는 준비 중이며 실제 구매 가능 여부는 앱에서 확인해 주세요.</p>
 
         <h3>1. 적용 범위와 처리 주체</h3>
@@ -57,6 +57,9 @@
         <p>외부 AI용 질문·스크립트 복사는 이 앱의 AI 서버를 호출하지 않습니다. 사용자가 다른 AI에 붙여넣거나 직접 공유하면 그 내용은 해당 사업자의 약관·정책에 따라 처리됩니다. 복사하기 전 내용을 확인해 주세요. 외부 취향 분석 결과는 앱으로 가져와 저장할 수 있으며, 외부 추천 결과는 사용한 AI에서 확인합니다.</p>
 
         <h3>7. 회원 인증, 크레딧과 지갑 복구</h3>
+        <p class="notice"><strong>무료 AI 체험:</strong> 무료 AI 체험은 준비 중이며, 해당 기능이 활성화된 버전에서만 아래 조건이 적용됩니다.</p>
+        <p>Google 또는 Apple 로그인 후 직접 신청하면 무료 AI 체험 5크레딧을 받습니다. 라벨 인식·추천은 각 1크레딧, 취향 분석은 5크레딧을 사용합니다. 체험 잔액은 구매 크레딧과 합산되며 사용하거나 탈퇴할 때까지 남습니다. 같은 로그인 계정은 직전 지급일부터 12개월 후 다시 신청할 수 있고 자동 지급되지 않습니다.</p>
+        <p>탈퇴·재가입을 통한 중복 수령 방지를 위해 공급자 계정 식별값에서 별도 비밀키로 만든 수령 확인값(HMAC)과 지급일·그로부터 계산한 만료일만 지급일부터 12개월까지 보관한 뒤 삭제합니다. 이 확인 기록에는 이름·이메일·원본 공급자 ID·회원 또는 지갑 연결값을 저장하지 않습니다. 동일 공급자 계정을 구분할 수 있는 가명 식별값이며 익명 정보로 취급하지 않습니다. 체험 기록은 유료 최초 지급 이력과 별도이고, 탈퇴 시 모든 잔액이 소멸하는 정책은 같습니다. 문의·권리행사 요청은 아래 개인정보 문의 경로로 접수할 수 있습니다.</p>
         <p>회원 모드에서는 로그인 전 서버 회원 계정을 자동 생성하지 않습니다. 로그인 후 계정은 고정 지갑, 구매·환불·지급·예약·소비·회수 내역, 최초 지급 기준과 혜택 주기에 연결됩니다. 세션·한시적 PKCE 증명·처리 대기 정보는 기기 전용 암호화 저장소에 두고 와인 백업에서 제외합니다. 로그인 공급자의 폐기용 refresh token은 공급자와 계정 일치를 검증한 뒤 서버에서 암호화 보관하고 탈퇴 시 폐기·삭제합니다. 문의 코드는 소유권 인증 수단이 아닙니다.</p>
         <p>현재 크레딧 처리 기록은 사진 해시나 AI 결과의 저장 키 대신 임의 처리번호를 사용합니다. 라벨 인식은 결과를 기기에 저장한 뒤 서버가 발급한 확인표로 수신을 확인해야 차감하며, 결과 수신이 확인되지 않은 요청은 기존 예약 만료 기준에 따라 해제합니다. 라벨 결과를 서버에서 다시 내려받는 복구 기능은 사용하지 않습니다. 취향 분석·추천의 응답 유실 복구 정보는 앱만 가진 별도 비밀값으로 암호화합니다. 이 암호문은 최초 저장 후 3분만 조회할 수 있고 만료 뒤 조회 시 및 매분 정리 작업으로 삭제합니다. 이는 사진·결과 자체의 보관 기한이나 백업까지 즉시 삭제한다는 뜻이 아닙니다.</p>
         <p>이 분리는 기능 처리 중인 서버가 입력을 전혀 볼 수 없거나 운영자가 기록을 절대 다시 연결할 수 없다는 보장은 아닙니다. 과거 백업·로그, 요청 시각·IP와 사진 저장 부가 정보 등을 통한 추정 연결 가능성이 남아 있습니다. 앱과 서버 사이 전체 통신이 종단간 암호화되는 구조도 아닙니다.</p>
@@ -88,11 +91,12 @@
         <ul>
           <li>로그인 프로필·연결·토큰·복구 식별값과 회원별 최초 지급 최대치·혜택 기준일: 탈퇴 처리 시 삭제합니다. 공급자 연결 해제가 실패하면 재시도에 필요한 최소 토큰만 처리 완료까지 보관합니다.</li>
           <li>상세 AI 사용 내역·지갑 장부: 탈퇴 후 30일 이내 삭제합니다.</li>
+          <li>무료 체험 수령 확인 기록: 위의 비밀키 기반 수령 확인값·지급일·만료일을 탈퇴 후에도 지급일부터 12개월까지 보관한 뒤 삭제합니다. 남은 체험 잔액이 이 기간 동안 복원된다는 뜻은 아닙니다.</li>
           <li>일회성 최소 구매 기록: 구매 권리가 유효한 동안 보관하고, 환불·취소로 권리가 끝나면 그 후 12개월간 보관합니다. 구독 최소 구매 기록은 권리와 미완료 처리가 모두 끝난 후 12개월간 보관합니다.</li>
           <li>충전권 지급·회수·소멸 처리 결과: 탈퇴와 최종 처리 중 늦은 시점부터 12개월간 보관합니다.</li>
           <li>백업 사본: 생성일부터 최대 30일간 보관하고 일반 서비스에는 사용하지 않습니다. 복원할 때 이미 접수된 탈퇴·만료 처리를 다시 적용합니다.</li>
         </ul>
-        <p>최소 구매 기록에는 스토어·거래번호 또는 구매 토큰·상품·구매/만료 시점·환불/취소·지급/회수/소멸·처리 완료 여부 등이 포함됩니다. 회원과의 연결은 제거하며 이름·이메일·로그인 식별값·사진·AI 답변은 넣지 않습니다. 다만 스토어 거래와 관련된 정보이므로 익명 정보라고 표현하지 않고 접근을 제한합니다. 이를 보관하는 목적은 구매 권리·미완료 거래·환불 처리와 과거 거래의 중복 지급 방지입니다. 동일인의 재가입을 추적하기 위한 로그인 식별값은 보관하지 않습니다.</p>
+        <p>최소 구매 기록에는 스토어·거래번호 또는 구매 토큰·상품·구매/만료 시점·환불/취소·지급/회수/소멸·처리 완료 여부 등이 포함됩니다. 회원과의 연결은 제거하며 이름·이메일·로그인 식별값·사진·AI 답변은 넣지 않습니다. 다만 스토어 거래와 관련된 정보이므로 익명 정보라고 표현하지 않고 접근을 제한합니다. 이를 보관하는 목적은 구매 권리·미완료 거래·환불 처리와 과거 거래의 중복 지급 방지입니다. 회원·지갑 복구용 로그인 식별값은 보관하지 않습니다. 무료 체험 중복 수령 방지용 확인 기록은 위의 별도 기준을 따릅니다.</p>
         <p>관리자 접근·권한 변경 기록과 스토어 정산·사업 회계 증빙은 회원 AI 사용 기록과 구분해 적용 법령에 따라 별도 관리합니다. 개별 보존 명령·분쟁 등 별도 의무가 있으면 해당 기록에만 사유와 기한을 정해 보존합니다. 앱 언어·통화·기여 국가만으로 관할을 정하거나 한국의 보관 규정을 해외 사용자 전체에 일괄 적용하지 않습니다. 실제 서버 정리 일정, 처리업체 로그·백업 설정과 복원 후 삭제 재적용 검증은 회원 기능 제공 전에 완료해야 하는 운영 작업입니다.</p>
 
         <h3>13. 아동, 변경과 문의</h3>
@@ -101,7 +105,7 @@
 
       <section class="lang-block" lang="en">
         <h2>Privacy Policy</h2>
-        <p><strong>Updated:</strong> 2026-10-25</p>
+        <p><strong>Updated:</strong> 2026-10-27</p>
         <p class="notice"><strong>Accounts and deletion:</strong> registration is optional for free use. Supporting app versions offer Google/Apple sign-in. Request deletion in the app or authenticate with the same account on the <a class="inline-link" href="account-deletion.html">web deletion page</a>. New product sales are being prepared; check availability in the app.</p>
 
         <h3>1. Scope and service provider</h3>
@@ -136,6 +140,9 @@
         <p>Copying prompts or scripts for an external AI does not call this app's AI server. Pasting or sharing them with another AI submits that content under that provider's terms and policies. Review it before copying. External taste-analysis results can be imported and saved; external recommendations are viewed in the AI you used.</p>
 
         <h3>7. Member authentication, credits, and wallet recovery</h3>
+        <p class="notice"><strong>Free AI trial:</strong> The free AI trial is being prepared; the following conditions apply only in versions where it is enabled.</p>
+        <p>After Google or Apple sign-in, explicitly request 5 free AI trial credits. Labels and recommendations cost 1 each; taste analysis costs 5. Trial credits combine with purchased credits and remain until used or account deletion. The same sign-in account may request another trial 12 months after the last grant; grants are never automatic.</p>
+        <p>To prevent repeat claims through deletion and rejoining, we retain only a purpose-specific keyed redemption receipt (HMAC) derived from the provider account identifier, the grant date and its derived expiry date until 12 months after the grant, then delete them. This receipt record contains no name, email, original provider ID, or link to a member or wallet. It distinguishes the same provider account and is pseudonymous, not anonymous. Trial receipts are separate from paid initial-grant history; account deletion still forfeits all remaining credits. Questions and data-rights requests can be submitted through the privacy contact below.</p>
         <p>Member mode does not automatically create a server member account before sign-in. After sign-in, the account is linked to its wallet, purchases, refunds, grants, reservations, consumption, reclamation, initial-grant history and benefit schedule. Sessions, short-lived PKCE proofs and pending information use device-only encrypted storage and are excluded from wine backups. Provider refresh tokens used for revocation are verified against the provider and account, encrypted on the server, and revoked/deleted on withdrawal. A support code is not proof of ownership.</p>
         <p>Current credit records use random operation numbers rather than image hashes or AI-result storage keys. Label recognition is charged only after the app saves the result locally and confirms receipt using a server-issued receipt. Unconfirmed requests are released under the existing reservation-expiry rules. Label results are not downloaded again from a server recovery cache. Taste-analysis and recommendation response-recovery data is encrypted with a separate secret held only by the app. This ciphertext is accessible for three minutes after initial storage and is deleted after expiry on access and by a per-minute cleanup task. This is not the retention period for photos/results and does not mean immediate deletion from backups.</p>
         <p>This separation does not prevent the processing server from seeing inputs or guarantee that an operator could never reconnect records. Inference from old backups/logs, request times, IP addresses, and image-storage metadata may remain possible. The complete app/server connection is not end-to-end encrypted.</p>
@@ -167,17 +174,18 @@
         <ul>
           <li>Login profiles, links, tokens, recovery identifiers, member-level highest initial allowance, and benefit anchor: deleted during withdrawal. If provider revocation fails, only the minimum token needed for retry remains until completion.</li>
           <li>Detailed AI usage and wallet ledger: deleted within 30 days after account deletion.</li>
+          <li>Free-trial redemption records: the keyed receipt, grant date and expiry date described above remain, including after deletion, until 12 months after the grant, then are deleted. This does not restore unused trial credits during that period.</li>
           <li>Minimal one-time purchase records: retained while rights remain valid and for 12 months after a refund/cancellation ends them. Minimal subscription records: retained for 12 months after both rights and unfinished processing end.</li>
           <li>Top-up grant, reclamation, and forfeiture outcomes: retained for 12 months from the later of account deletion or final processing.</li>
           <li>Backup copies: retained for up to 30 days from creation, not used for ordinary service. Accepted deletions and expiry rules are reapplied on restoration.</li>
         </ul>
-        <p>Minimal purchase records include store, transaction number or purchase token, product, purchase/expiry times, refund/cancellation, grant/reclamation/forfeiture, and completion status. Member links are removed, and names, email addresses, login identifiers, photos, and AI answers are excluded. These remain store-transaction information, not anonymous information, with restricted access. Retention supports rights, unfinished transactions, refunds, and prevention of duplicate grants for past transactions. Login identifiers are not retained to track the same person rejoining.</p>
+        <p>Minimal purchase records include store, transaction number or purchase token, product, purchase/expiry times, refund/cancellation, grant/reclamation/forfeiture, and completion status. Member links are removed, and names, email addresses, login identifiers, photos, and AI answers are excluded. These remain store-transaction information, not anonymous information, with restricted access. Retention supports rights, unfinished transactions, refunds, and prevention of duplicate grants for past transactions. Login identifiers are not retained to restore a former member or wallet. The separate free-trial redemption record follows the rule above.</p>
         <p>Administrator access/permission records and store settlement/business-accounting evidence are managed separately under applicable law, not as member AI usage. Specific preservation orders or disputes may retain only the affected records with a reason and deadline. Jurisdiction is not inferred only from language, currency, or contribution country, and Korean retention rules are not imposed on all foreign users. Server cleanup schedules, provider log/backup settings, and reapplying deletions after recovery still require operational verification before member features are offered.</p>
 
         <h3>13. Children, changes, and contact</h3>
         <p>OL~ WINE is not directed at children and does not knowingly collect their personal information. This policy is updated when features, providers, retention, or deletion practices change. Send privacy and deletion inquiries to <a class="inline-link" href="mailto:olwine.service@gmail.com">olwine.service@gmail.com</a>. Do not email authentication tokens or wallet-recovery secrets.</p>
       </section>
     </main>
-    <footer class="footer"><div class="footer-inner"><p>© 2026 OL Wine Service. Last updated: 2026-10-25.</p></div></footer>
+    <footer class="footer"><div class="footer-inner"><p>© 2026 OL Wine Service. Last updated: 2026-10-27.</p></div></footer>
   </body>
 </html>

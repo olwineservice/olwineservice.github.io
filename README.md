@@ -23,6 +23,10 @@ https://olwineservice.github.io/
 - `404.html`: not found page
 - `FEATURE_SCREENSHOT_BRIEF.md`: feature order, capture inventory, and release checks
 
+## Free AI trial notice (2026-10-27)
+
+The Korean/English privacy, terms, support and deletion pages describe a planned explicit 5-credit trial after member sign-in and a separate 12-month pseudonymous redemption receipt. This notice does not enable trial grants or sales. Unused credits combine with purchases and are forfeited on account deletion; only the keyed receipt/grant/expiry dates survive deletion until the original expiry. The web deletion flow accepts the existing v3 policy and strictly checks the optional reviewed trial disclosure before enabling confirmation. The static notice remains visible even when new trial claims are paused. No provider IDs, keys, tokens or member/wallet links are published. Existing OAuth URLs and the public deletion configuration are unchanged.
+
 ## Production disclosures and web deletion (2026-10-25)
 
 The Korean and English privacy, terms, support and deletion pages now describe optional free sign-in, provider identifiers/names/email/profile metadata, and the active web deletion path. New product sales remain in preparation; publishing these pages does not activate app sales or submit a store review.
