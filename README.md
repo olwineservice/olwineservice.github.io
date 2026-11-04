@@ -13,6 +13,8 @@ https://olwineservice.github.io/
 - `index.html`: landing page
 - `about.html`: product introduction
 - `features.html`: bilingual overview of major app features
+- `release-notes.html`: Korean release notes with 1.0.1 improvements and the major features of 1.0.0
+- `release-notes-en.html`: separate English release notes with a link to the Korean page
 - `support.html`: user support and FAQ
 - `privacy.html`: privacy policy, including optional anonymous data contribution
 - `terms.html`: terms of use
