@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Features | OL~ WINE</title>
-    <meta name="description" content="OL~ WINE의 와인·셀러 관리, 시음 기록, 셀러 정리, 검색, 현황, AI 입력과 추천, 배지, QR, 백업 기능을 살펴보세요.">
+    <meta name="description" content="OL~ WINE의 와인·셀러 관리, 시음 기록, 셀러 정리, 검색, 현황, AI 입력과 추천, 배지, 손님 메뉴판, QR, 백업 기능을 살펴보세요.">
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -49,6 +49,10 @@
       .feature-page .feature-media {
         grid-template-columns: repeat(2, minmax(0, 240px));
         gap: 16px;
+      }
+
+      .feature-page .feature-media.feature-media-landscape {
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .feature-page .feature-item > p,
@@ -159,6 +163,13 @@
               <figure class="feature-shot"><a href="images/features/wishlist.png"><img src="images/features/wishlist.png" alt="구매희망 와인 목록" width="1206" height="2622" loading="lazy"></a><figcaption>구매희망 와인 목록</figcaption></figure>
             </div>
           </article>
+          <article class="feature-item" id="guest-menu-ko">
+            <h3>손님과 함께 고르는 와인 메뉴판</h3>
+            <p>보유 와인 중 손님에게 보여줄 목록을 골라 나만의 와인 메뉴판을 만들어 보세요. 와인 종류와 표시 순서를 정하고, 손님이 고른 와인의 주문을 확인해 병별로 접수할 수 있습니다. PIN 또는 기기 인증으로 관리 화면에 돌아올 수 있습니다.</p>
+            <div class="feature-media feature-media-landscape">
+              <figure class="feature-shot"><a href="images/features/olwine-guest-menu-duo-ko.png"><img src="images/features/olwine-guest-menu-duo-ko.png" alt="iPhone Duo 가로 화면의 Wine List 메뉴판" width="2853" height="2007" loading="lazy"></a><figcaption>Wine List · iPhone Duo 가로 화면</figcaption></figure>
+            </div>
+          </article>
           <article class="feature-item" id="qr-ko">
             <h3>QR로 바로 찾는 내 와인</h3>
             <p>와인·층·셀러별 QR 라벨을 만들어 이미지로 저장하거나 인쇄할 수 있습니다. 라벨을 스캔하면 연결된 와인과 보관 정보를 바로 확인할 수 있어, 병이 여러 겹으로 쌓인 셀러에서도 필요한 와인을 찾는 데 도움이 됩니다.</p>
@@ -257,6 +268,13 @@
               <figure class="feature-shot"><a href="images/features/wishlist_e.png"><img src="images/features/wishlist_e.png" alt="English wishlist with three wines, four bottles, and a $290 estimated total" width="1206" height="2622" loading="lazy"></a><figcaption>Your wine wishlist</figcaption></figure>
             </div>
           </article>
+          <article class="feature-item" id="guest-menu-en">
+            <h3>A wine menu for your guests</h3>
+            <p>Choose which wines from your collection to show your guests in a personal wine menu. Arrange wine types and display order, then review guest orders and approve individual bottles. Return to the management screen with a PIN or device authentication.</p>
+            <div class="feature-media feature-media-landscape">
+              <figure class="feature-shot"><a href="images/features/olwine-guest-menu-duo-en.png"><img src="images/features/olwine-guest-menu-duo-en.png" alt="Wine List guest menu on an iPhone Duo in landscape" width="2853" height="2007" loading="lazy"></a><figcaption>Wine List · iPhone Duo landscape</figcaption></figure>
+            </div>
+          </article>
           <article class="feature-item" id="qr-en">
             <h3>Go straight to a wine with QR</h3>
             <p>Create QR labels for wines, layers, or cellars, then save them as images or print them. Scan a label to open the linked wine and storage details, which is especially helpful when bottles are stacked out of sight.</p>
@@ -286,7 +304,7 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>© 2026 OL Wine Service. Last updated: 2026-10-19.</p>
+        <p>© 2026 OL Wine Service. Last updated: 2026-11-27.</p>
       </div>
     </footer>
   </body>
